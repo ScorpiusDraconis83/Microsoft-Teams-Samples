@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample that shows how to use dialog bot with bot sdk v4, messaging extension and facebook auth flow in Nodejs.
+description: Explore a sample that demonstrates building a Microsoft Teams bot using SDK v4, featuring messaging extensions, adaptive cards, and Facebook authentication.
 products:
 - office-teams
 - office-365
@@ -17,7 +17,7 @@ urlFragment: officedev-microsoft-teams-samples-app-complete-sample-nodejs
 
 # Microsoft Teams Bot in Node.js
 
-Sample that shows how to use dialog bot with bot sdk v4, messaging extension, facebook auth flow in Nodejs.
+This sample application showcases the development of a feature-rich Microsoft Teams bot utilizing the Bot Framework SDK v4. It incorporates various functionalities, including dialog management, messaging extensions, and Facebook authentication, all built on Node.js.
 
 ## Included Features
 * Bots
@@ -57,7 +57,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## To try this sample
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
 2.  Register a bot with Azure Bot Service, following the instructions [here](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration?view=azure-bot-service-3.0).
    - Ensure that you've [enabled the Teams Channel](https://docs.microsoft.com/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
@@ -148,23 +148,31 @@ This directory holds all of the TypeScript files, which run the entire applicati
 
 ## Running the sample
 
-![](images/app-complete-sample1.png)
+![](images/1.Install.png)
 
-![](images/app-complete-sample2.png)
+![](images/2.Welcome.png)
 
-![](images/app-complete-sample3.png)
+![](images/3.Commands.png)
 
-![](images/app-complete-sample4.png)
+![](images/4.Hello.png)
 
-![](images/app-complete-sample5.png)
+![](images/5.MultiDialog.png)
 
-![](images/app-complete-sample6.png)
+![](images/6.Roaster.png)
 
-![](images/app-complete-sample7.png)
+![](images/7.Names.png)
 
-![](images/app-complete-sample8.png)
+![](images/8.LastDialog.png)
 
-![](images/app-complete-sample-tab.png)
+![](images/9.OneToOne.png)
+
+![](images/10.SetupTextMessage.png)
+
+![](images/12.BotInfo.png)
+
+![](images/13.ConfigTabTeams.png)
+
+![](images/14.TeamsTab.png)
 
 ## Outlook on the web
 
@@ -174,15 +182,15 @@ This directory holds all of the TypeScript files, which run the entire applicati
 
 **On the side bar, select More Apps. Your sideloaded app title appears among your installed apps**
 
-![InstallOutlook](Images/InstallOutlook.png)
+![InstallOutlook](images/InstallOutlook.png)
 
 **Select your app icon to launch and preview your app running in Outlook on the web**
 
-![AppOutlook](Images/AppOutlook.png)
+![AppOutlook](images/AppOutlook.png)
 
 **Select your app icon from message extension and find ward, it will show all options**
 
-![AppOutlook](Images/AppOutlook_msgext.png)
+![AppOutlook](images/AppOutlook_msgext.png)
 
 **Note:** Similarly, you can test your application in the Outlook desktop app as well.
 
@@ -194,11 +202,11 @@ This directory holds all of the TypeScript files, which run the entire applicati
 
 **Select the Apps icon on the side bar. Your sideloaded app title appears among your installed apps**
 
-![InstallOffice](Images/InstallOffice.png)
+![InstallOffice](images/InstallOffice.png)
 
 **Select your app icon to launch your app in Office on the web**
 
-![AppOffice](Images/AppOffice.png) 
+![AppOffice](images/AppOffice.png) 
 
 **Note:** Similarly, you can test your application in the Office 365 desktop app as well.
 

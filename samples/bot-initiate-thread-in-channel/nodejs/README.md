@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample showcases feature on how to start new message thread inside teams channel.
+description: This app demonstrates how to start a conversation thread in a specific Teams channel using Bot Framework v4.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-initiate-thread-in-channel-no
 
 # Teams - Start new thread in a channel (proactive messaging)
 
-You can interact with this bot by sending it a message. The bot will respond by sending a reply to the channel, and then responding to that reply.
+This sample application illustrates how to initiate a conversation thread within a specific channel in Microsoft Teams using Bot Framework v4. It includes key features such as adaptive cards, bot-driven interactions, and setup instructions for Teams Toolkit in Visual Studio, enabling easy sideloading and debugging. Ideal for developers looking to integrate bots in Teams channels and create engaging, context-specific conversations.
 
 ## Included Features
 * Bots
@@ -75,7 +75,7 @@ the Teams service needs to call into the bot.
 ## Setup for bot
 In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     
    In the new Azure Bot resource in the Portal, 
@@ -121,14 +121,14 @@ In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/
 You can interact with this bot by sending it a message. The bot will respond by creating a new thread in the channel and replying to that new thread.
 
 **Adding the bot to a team's channel :**
-![add-App ](Images/add-App.png)
+![Add-App ](Images/1.Install.png)
 
-![add-App-To-Teams-Channel ](Images/add-App-To-Teams-Channel.png)
+![Add-App-To-Teams-Channel ](Images/2.SelectTeams.png)
 
-![added-App ](Images/added-App.png)
+![Mention Bot In Teams ](Images/3.MentionInTeams.png)
 
 **Mention the bot in a team's channel using "@" with any message like: '@yourbotname Hello' :**
-![mentionedBot-NewThread ](Images/mentionedBot-NewThread.png)
+![First Response To New Thread ](Images/4.FirstResponseInThread.png)
 
 
 ## Deploy the bot to Azure

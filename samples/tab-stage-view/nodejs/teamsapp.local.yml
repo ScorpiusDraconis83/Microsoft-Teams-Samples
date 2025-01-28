@@ -24,7 +24,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: tab-stage-view-${{TEAMSFX_ENV}}
+      name: tab-stage-view${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -88,3 +88,4 @@ deploy:
         MicrosoftAppId: ${{AAD_APP_CLIENT_ID}}
         MicrosoftAppPassword: ${{SECRET_AAD_APP_CLIENT_SECRET}}
         BaseUrl: ${{BOT_ENDPOINT}}
+        TeamsAppId: ${{TEAMS_APP_ID}}

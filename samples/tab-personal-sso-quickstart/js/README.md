@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is an sample tab application which demonstrates Azure AAD authentication using OBO flow in personal teams tab.
+description: This sample application showcases how to implement Single Sign-On (SSO) authentication in personal Teams tabs using Azure Microsoft Entra and Node.js.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-personal-sso-quickstart-js
 
 # Teams Personal Tab SSO Authentication Sample Node.js
 
-Tabs are Teams-aware webpages embedded in Microsoft Teams. Personal tabs are scoped to a single user. They can be pinned to the left navigation bar for easy access.
+This sample application serves as a complete guide for implementing Single Sign-On (SSO) authentication in personal tabs within Microsoft Teams, leveraging Azure Microsoft Entra and Node.js. It covers all necessary steps, including app registration, manifest configuration, and integration with the Microsoft Graph API, allowing for a smooth user experience across Teams and related Microsoft services.
 
 ## Included Features
 * Teams SSO (tabs)
@@ -56,8 +56,8 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     ngrok http 3978 --host-header="localhost:3978"
     ```
 
-2. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
-  Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+2. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+  Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
  - Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -98,7 +98,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
    In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/en-us/free/)
     
    In the new Azure Bot resource in the Portal, 

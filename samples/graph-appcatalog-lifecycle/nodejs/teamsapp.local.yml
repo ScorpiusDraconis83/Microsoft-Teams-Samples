@@ -24,7 +24,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: graph-appcatalog-lifecycle-${{TEAMSFX_ENV}}
+      name: graph-appcatalog-lifecycle${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile:
@@ -92,4 +92,6 @@ deploy:
       envs:
         MicrosoftAppId: ${{AAD_APP_CLIENT_ID}}
         MicrosoftAppPassword: ${{SECRET_AAD_APP_CLIENT_SECRET}}
-        connectionName: ${{CONNECTION_NAME}}
+        ConnectionName: ${{CONNECTION_NAME}}
+        MicrosoftAppType: ${{MICROSOFT_APP_TYPE}}
+        MicrosoftAppTenantId: ${{MICROSOFT_APP_TENANT_ID}}

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample app demonstrates use of different bot conversation events available in bot framework v4 for personal and teams scope.
+description: This app showcases bot conversation events and messaging extensions for Microsoft Teams using the Bot Framework v4.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-conversation-quickstart-js
 
 # Bots/Messaging Extension
 
-*Bots* allow users to interact with your web service through text, interactive cards, and task modules. *Messaging extensions* allow users to interact with your web service through buttons and forms in the Microsoft Teams client. They can search, or initiate actions, in an external system from the compose message area, the command box, or directly from a message.
+This sample demonstrates how to build a Microsoft Teams bot that handles conversation events and messaging extensions using Bot Framework v4. Users can interact with bots through adaptive cards, task modules, and buttons, enhancing the Teams experience with custom, interactive solutions.
 
 ## Included Features
 * Bots
@@ -50,7 +50,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Run the app (Manually Uploading to Teams)
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
    
 2. Setup for Bot
    In Azure portal, create a [Bot Framework registration resource](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp%2Caadv2).

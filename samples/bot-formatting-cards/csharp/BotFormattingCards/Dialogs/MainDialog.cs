@@ -80,7 +80,7 @@ namespace Microsoft.BotBuilderSamples
             // Decide which type of card(s) we are going to show the user
             switch (((FoundChoice)stepContext.Result).Value)
             {
-                
+
                 case "InfoMasking":
                     // Sends Information masking in Adaptive Cards
                     reply.Attachments.Add(AllCards.sendInfoMasking());
@@ -113,6 +113,78 @@ namespace Microsoft.BotBuilderSamples
                     // Sends Persona Card Set Icons
                     reply.Attachments.Add(AllCards.sendPersonaCardSetIcons());
                     break;
+                case "Layout":
+                    // Adaptive Card responsive layout
+                    reply.Attachments.Add(AllCards.sendResponsiveLayoutCard());
+                    break;
+                case "Border":
+                    // Adaptive Card Borders
+                    reply.Attachments.Add(AllCards.SendBorderCard());
+                    break;
+                case "RoundedCorners":
+                    // Adaptive Card Rounded Corners
+                    reply.Attachments.Add(AllCards.SendRoundedCornerCard());
+                    break;
+                case "FluentIcons":
+                    // Adaptive Card Fluent Icons
+                    reply.Attachments.Add(AllCards.SendFluentIconsCard());
+                    break;
+                case "MediaElements":
+                    // Media elements in Adaptive Card
+                    reply.Attachments.Add(AllCards.SendMediaElementsCard());
+                    break;
+                case "StarRatings":
+                    // Star ratings in Adaptive Cards
+                    reply.Attachments.Add(AllCards.SendStarRatingsCard());
+                    break;
+                case "ConditionalCard":
+                    // Adaptive Card Conditional Enablement
+                    reply.Attachments.Add(AllCards.SendConditionalCard());
+                    break;
+                case "ScrollableCard":
+                    // Adaptive Card Scrollable Container
+                    reply.Attachments.Add(AllCards.SendScrollableCard());
+                    break;
+                case "CompoundButton":
+                    // Adaptive Card Compound Button
+                    reply.Attachments.Add(AllCards.SendCompoundButtonCard());
+                    break;
+                case "ContainerLayout":
+                    // Adaptive Card Container Layout
+                    reply.Attachments.Add(AllCards.SendContainerLayoutCard());
+                    break;
+                case "DonutChart":
+                    // Adaptive Card Donut Chart
+                    reply.Attachments.Add(AllCards.SendDonutChartCard());
+                    break;
+                case "GaugeChart":
+                    // Adaptive Card Gauge Chart
+                    reply.Attachments.Add(AllCards.SendGaugeChartCard());
+                    break;
+                case "HorizontalChart":
+                    // Adaptive Card Horizontal Bar Chart
+                    reply.Attachments.Add(AllCards.SendHorizontalBarChartCard());
+                    break;
+                case "HorizontalStacked":
+                    // Adaptive Card Horizontal Bar Stacked Chart
+                    reply.Attachments.Add(AllCards.SendHorizontalBarStackedChartCard());
+                    break;
+                case "LineChart":
+                    // Adaptive Card Line Chart
+                    reply.Attachments.Add(AllCards.SendLineChartCard());
+                    break;
+                case "PieChart":
+                    // Adaptive Card Pie Chart
+                    reply.Attachments.Add(AllCards.SendPieChartCard());
+                    break;
+                case "VerticalBarChart":
+                    // Adaptive Card Vertical Bar Chart
+                    reply.Attachments.Add(AllCards.SendVerticalBarChartCard());
+                    break;
+                case "VerticalGroupedChart":
+                    // Adaptive Card Vertical Bar Grouped Chart
+                    reply.Attachments.Add(AllCards.SendVerticalBarGroupedChartCard());
+                    break;
                 default:
                     reply.Attachments.Add(AllCards.sendInfoMasking());
                     reply.Attachments.Add(AllCards.sendFullWidthCardAdaptiveCard());
@@ -122,6 +194,24 @@ namespace Microsoft.BotBuilderSamples
                     reply.Attachments.Add(AllCards.sendCardWithEmoji());
                     reply.Attachments.Add(AllCards.sendPersonaCardIcons());
                     reply.Attachments.Add(AllCards.sendPersonaCardSetIcons());
+                    reply.Attachments.Add(AllCards.sendResponsiveLayoutCard());
+                    reply.Attachments.Add(AllCards.SendBorderCard());
+                    reply.Attachments.Add(AllCards.SendRoundedCornerCard());
+                    reply.Attachments.Add(AllCards.SendFluentIconsCard());
+                    reply.Attachments.Add(AllCards.SendMediaElementsCard());
+                    reply.Attachments.Add(AllCards.SendStarRatingsCard());
+                    reply.Attachments.Add(AllCards.SendConditionalCard());
+                    reply.Attachments.Add(AllCards.SendScrollableCard());
+                    reply.Attachments.Add(AllCards.SendCompoundButtonCard());
+                    reply.Attachments.Add(AllCards.SendContainerLayoutCard());
+                    reply.Attachments.Add(AllCards.SendDonutChartCard());
+                    reply.Attachments.Add(AllCards.SendGaugeChartCard());
+                    reply.Attachments.Add(AllCards.SendHorizontalBarChartCard());
+                    reply.Attachments.Add(AllCards.SendHorizontalBarStackedChartCard());
+                    reply.Attachments.Add(AllCards.SendLineChartCard());
+                    reply.Attachments.Add(AllCards.SendPieChartCard());
+                    reply.Attachments.Add(AllCards.SendVerticalBarChartCard());
+                    reply.Attachments.Add(AllCards.SendVerticalBarGroupedChartCard());
                     break;
             }
 
@@ -155,6 +245,24 @@ namespace Microsoft.BotBuilderSamples
                     new Choice() { Value = "CardWithEmoji", Synonyms = new List<string>() { "CardWithEmoji" } },
                     new Choice() { Value = "Persona", Synonyms = new List<string>() { "Persona" } },
                     new Choice() { Value = "PersonaSet", Synonyms = new List<string>() { "PersonaSet" } },
+                    new Choice() { Value = "Layout", Synonyms = new List<string>() { "Layout" } },
+                    new Choice() { Value = "Border", Synonyms = new List<string>() { "Border" } },
+                    new Choice() { Value = "RoundedCorners", Synonyms = new List<string>() { "RoundedCorners" } },
+                    new Choice() { Value = "FluentIcons", Synonyms = new List<string>() { "FluentIcons" } },
+                    new Choice() { Value = "MediaElements", Synonyms = new List<string>() { "MediaElements" } },
+                    new Choice() { Value = "StarRatings", Synonyms = new List<string>() { "StarRatings" } },
+                    new Choice() { Value = "ConditionalCard", Synonyms = new List<string>() { "ConditionalCard" } },
+                    new Choice() { Value = "ScrollableCard", Synonyms = new List<string>() { "ScrollableCard" } },
+                    new Choice() { Value = "CompoundButton", Synonyms = new List<string>() { "CompoundButton" } },
+                    new Choice() { Value = "ContainerLayout", Synonyms = new List<string>() { "ContainerLayout" } },
+                    new Choice() { Value = "DonutChart", Synonyms = new List<string>() { "DonutChart" } },
+                    new Choice() { Value = "GaugeChart", Synonyms = new List<string>() { "GaugeChart" } },
+                    new Choice() { Value = "HorizontalChart", Synonyms = new List<string>() { "HorizontalChart" } },
+                    new Choice() { Value = "HorizontalStacked", Synonyms = new List<string>() { "HorizontalChartStacked" } },
+                    new Choice() { Value = "LineChart", Synonyms = new List<string>() { "LineChart" } },
+                    new Choice() { Value = "PieChart", Synonyms = new List<string>() { "PieChart" } },
+                    new Choice() { Value = "VerticalBarChart", Synonyms = new List<string>() { "VerticalBarChart" } },
+                    new Choice() { Value = "VerticalGroupedChart", Synonyms = new List<string>() { "VerticalBarGroupedChart" } }
                 };
 
                 return returncardOptions;

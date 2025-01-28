@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample demos Azure AD and facebook authentication feature in bot,tab and messaging extension.
+description: This sample showcases Azure AD and Facebook authentication across bots, tabs, and messaging extensions in Microsoft Teams.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-app-complete-auth-nodejs
 
 # Authentication complete sample
 
-Using this nodejs sample, you can check authenticate in bot,tab and messaging extention with sso, facebook and using user name and password.
+Experience seamless authentication with this sample application, which integrates Azure AD and Facebook authentication across Microsoft Teams bots, tabs, and messaging extensions. It supports single sign-on (SSO), Adaptive Cards, Task Modules, and Microsoft Graph API, ensuring a rich and secure user experience.
 
 ## Included Features
 * Teams SSO (tabs, bots, messaging extensions, link unfurling)
@@ -59,7 +59,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ### 1. Setup for App Registration
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -206,7 +206,7 @@ Type `login`.  A login card will be sent to user.
 
 - **SSO**
   
-Select AAD SSO login option. A consent popup will be sent. Click continue.
+Select Microsoft Entra SSO login option. A consent popup will be sent. Click continue.
 ![SSO login](Images/bot-consent.png)
 
 After the consent is granted, card will be sent containing user's profile details.

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Shows how to request RSC permissions, use them to call Microsoft Graph, and how to enumerate permission grants through teams tab.
+description: This sample application demonstrates how to request Resource Specific Consent (RSC) permissions to call Microsoft Graph and enumerate permission grants through a Teams tab.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-rsc-nodeJs
 
 # Resource specific consent with Graph API
 
-This sample illustrates you can use [Resource Specific Consent](https://learn.microsoft.com/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent) to call Graph API.
+This sample application illustrates how to utilize [Resource Specific Consent](https://learn.microsoft.com/microsoftteams/platform/graph-api/rsc/grant-resource-specific-consent) to call Microsoft Graph APIs within Microsoft Teams. It includes features for requesting permissions, interacting via a Teams tab, and sending activity feed notifications, providing a seamless integration experience.
 
 ## Included Features
 * Tabs
@@ -51,7 +51,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## Setup
-1) Register your app with Microsoft identity platform via the Azure AD portal (AAD app registration in Azure portal)
+1) Register your app with Microsoft identity platform via the Azure AD portal (Microsoft Entra ID app registration in Azure portal)
     - Your app must be registered in the Azure AD portal to integrate with the Microsoft identity platform and call Microsoft Graph APIs. See [Register an application with the Microsoft identity platform](https://docs.microsoft.com/graph/auth-register-app-v2).
     
 **Note** -  Make sure you have added `TeamsAppInstallation.ReadForUser.All` as Application level permission for the app.
@@ -82,7 +82,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
    devtunnel host -p 3978 --allow-anonymous
    ```
 
-6) Update the `.env` file configuration (ClientId, ClientSecret) for the bot to use the Microsoft App Id and App Password from the AAD app registration in your Azure Portal or from Bot Framework registration. (Note the App Password is referred to as the "client secret" in the azure portal and you can always create a new client secret anytime.)
+6) Update the `.env` file configuration (ClientId, ClientSecret) for the bot to use the Microsoft App Id and App Password from the Microsoft Entra ID app registration in your Azure Portal or from Bot Framework registration. (Note the App Password is referred to as the "client secret" in the azure portal and you can always create a new client secret anytime.)
 
 7) Run your bot at the command line:
 

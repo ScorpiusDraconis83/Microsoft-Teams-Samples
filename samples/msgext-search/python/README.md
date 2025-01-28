@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample app demonstrate how to use Messaging Extensions Search
+description: This sample demonstrates how to create a Python Messaging Extension in Microsoft Teams that enables users to perform searches and retrieve results seamlessly.
 products:
 - office-teams
 - office
@@ -16,7 +16,8 @@ urlFragment: officedev-microsoft-teams-samples-bot-message-extension-python
 
 # Teams Messaging Extensions Search
 
-[Messaging Extensions](https://docs.microsoft.com/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) are a special kind of Microsoft Teams application that is support by the [Bot Framework](https://dev.botframework.com) v4.
+
+This comprehensive Python sample provides a detailed guide on building a search-based [Messaging Extensions](https://docs.microsoft.com/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions) for Microsoft Teams, empowering users to conduct searches and retrieve results efficiently. By leveraging the [Bot Framework](https://dev.botframework.com), this extension enhances user interaction within Teams, demonstrating features such as search commands, message handling, and result display.
 
 There are two basic types of Messaging Extension in Teams: [Search-based](https://docs.microsoft.com/microsoftteams/platform/messaging-extensions/how-to/search-commands/define-search-command) and [Action-based](https://docs.microsoft.com/microsoftteams/platform/messaging-extensions/how-to/action-commands/define-action-command). This sample illustrates how to
 build a Search-based Messaging Extension.
@@ -102,13 +103,27 @@ the Teams service needs to call into the bot.
 
 > Note this `manifest.json` specified that the feature will be available from both the `compose` and `commandBox` areas of Teams. Please refer to Teams documentation for more details.
 
-In Teams, the command bar is located at the top of the window. When you at mention the bot what you type is forwarded (as you type) to the bot for processing. By way of illustration, this sample uses the text it receives to query the NuGet package store.
+In Teams, you can click `Actions and apps` option button at right bottom of the message typing box to choose the search extension bot. And then you can search information by typing query to the bot for processing. By way of illustration, this sample uses the text it receives to query the [PyPI](https://pypi.org/). 
 
 There is a secondary, drill down, event illustrated in this sample: clicking on the results from the initial query will result in the bot receiving another event.
 
 ## Deploy the bot to Azure
 
 To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+
+## Running the sample
+
+![InstallAppUser1](Images/1.Install.png)
+
+![SelectExtension](Images/2.Select_Extension.png)
+
+![ExtensionSelected](Images/3.Extension_Selected.png)
+
+![SearchQuery](Images/4.Search_Query.png)
+
+![SearchResult](Images/5.Select_result.png)
+
+![InChat](Images/6.Posted_In_Chat.png)
 
 # Further reading
 

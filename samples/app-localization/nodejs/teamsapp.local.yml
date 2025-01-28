@@ -24,7 +24,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: app-localization-${{TEAMSFX_ENV}}
+      name: app-localization${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -78,6 +78,12 @@ deploy:
   # Run npm command
   - uses: cli/runNpmCommand
     with:
+      args: install --no-audit
+  
+  # Run npm command for client
+  - uses: cli/runNpmCommand
+    with:
+      workingDirectory: ./client
       args: install --no-audit
 
   # Generate runtime environment variables

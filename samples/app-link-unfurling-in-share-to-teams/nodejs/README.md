@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample demos the feature of link unfurling for share to teams.
+description: This sample demonstrates how to implement link unfurling in Share to Teams for seamless sharing of site content directly to individual contacts or groups on Teams.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-app-link-unfurling-in-share-to-te
 
 ## Link unfruling Share to teams sample
 
-This sample demos the feature of link unfurling for share to teams (The Share to Teams feature allows site users to easily share a site and content to individual contacts or groups on Teams.).
+This sample demonstrates the Share to Teams feature, which allows users to seamlessly share site content directly to contacts or groups in Microsoft Teams, leveraging link unfurling to provide rich previews and context for shared links. It includes comprehensive setup instructions, bot registration, and local deployment steps, making it easy to integrate and test within your Teams environment.
 
 ## Interaction with app
 
@@ -105,17 +105,19 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Running the sample
 
-  ![tab](Images/tabpage.png)
+  ![tab](Images/1.Install.png)
   
-  ![Link unfurling STT](Images/linkunfurlscreen.png)
+  ![Continue Devtunnel](Images/2.Continue.png)
 
-  ![Link unfurling success](Images/successcard.png)
+  ![Tab](Images/3.Tab.png)
   
-  ![Link unfurling card](Images/channelcard.png)
+  ![Share To Teams](Images/4.ShareToTeams.png)
 
-  ![tab-web](Images/tabpageweb.png)
+  ![Link Shared](Images/5.Shared.png)
 
-  ![Link unfurling STT web](Images/linkunfurlingweb.png)
+  ![Link unfurling STT Teams](Images/6.InTeams.png)
+
+  ![View Via Card](Images/7.ViewViaCard.png)
 
 ## Deploy the bot to Azure
 

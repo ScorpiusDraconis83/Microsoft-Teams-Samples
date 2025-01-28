@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is an sample application which showcases AAD authentication in channel tab.
+description: This application demonstrates how to implement Microsoft Entra SSO authentication in Microsoft Teams personal tabs, providing secure access to user profiles and APIs.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-channel-group-sso-quickstart-
 
 # Teams Tab SSO Authentication Sample Node.js
 
-Tabs are Teams-aware webpages embedded in Microsoft Teams. Personal tabs are scoped to a single user. They can be pinned to the left navigation bar for easy access.
+Explore this sample application that showcases Microsoft Entra SSO authentication within personal tabs in Microsoft Teams, allowing users to securely access their profiles and application APIs. With detailed setup guidance, including app registration, permissions configuration, and deployment using Teams Toolkit for Visual Studio, this sample is ideal for developers aiming to enhance their Teams applications with robust authentication features.
 
 ## Interaction with app
 
@@ -46,7 +46,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
   
 ## Setup
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
   - On the overview page, copy and save the **Application (client) ID, Directory (tenant) ID**. You’ll need those later when updating your Teams application manifest and in the .env file at both client and server.
   - Navigate to the **Certificates & secrets**. In the Client secrets section, click on "+ New client secret". Add a description (Name of the secret) for the secret and select “Never” for Expires. Click "Add". Once the client secret is created, copy its value, it need to be placed in the appsettings.json file.
@@ -87,7 +87,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
    In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/en-us/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/en-us/free/)
     
    In the new Azure Bot resource in the Portal, 

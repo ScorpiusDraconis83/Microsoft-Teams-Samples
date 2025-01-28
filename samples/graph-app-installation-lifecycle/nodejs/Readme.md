@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample illustrates how you can use Teams App Installation Life Cycle by calling Microsoft Graph APIs through teams tab.
+description: This sample app showcases the installation lifecycle of Teams Apps using Microsoft Graph APIs.
 products:
 - office-teams
 - office
@@ -14,7 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-app-installation-lifecycle-
 ---
 # App Installation
 
-This sample app demonstarte the installation lifecycle for Teams [Apps](https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0) which includes create, update delete Apps
+This sample app demonstrates the installation lifecycle for Teams [Apps](https://docs.microsoft.com/graph/api/resources/teamsappinstallation?view=graph-rest-1.0), showcasing how to create, update, and delete apps using Microsoft Graph APIs via a Teams tab. It features interactive elements, such as tabs, and provides a guided setup for seamless integration within Microsoft Teams, offering developers a comprehensive experience in app lifecycle management.
 
 ## Included Features
 * Tabs
@@ -50,7 +50,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## Setup
- 1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+ 1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
  
     - Your app must be registered in the Azure AD portal to integrate with the Microsoft identity platform and call Microsoft Graph APIs. See [Register an application with the Microsoft identity platform](https://docs.microsoft.com/graph/auth-register-app-v2).
     - You need to add following permissions mentioned in the below screenshots to call respective Graph   API
@@ -111,21 +111,21 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
   
 ## Running the sample
 
-   ![](Images/Install.png)
+   ![GraphAppInstallation](Images/1.add_app.png)
 
-   ![](Images/AddAppListTab.png)
+   ![GraphAppInstallation](Images/2.select_team.png)
 
-   ![](Images/ListApp.png)
+   ![GraphAppInstallation](Images/3.add_to_team.png)
 
-   ![](Images/AppAddSuccess.png)
+   ![GraphAppInstallation](Images/4.app_installation.png)
 
-   ![](Images/AppDescription.png)
-   
-   ![](Images/AppUpdateSuccess.png)
+   ![GraphAppInstallation](Images/5.app_installed_demo.png)
 
-    ![](Images/DeleteApp.png)
+   ![GraphAppInstallation](Images/6.app_added_success.png)
 
-    ![](Images/AppDeleteSuccess.png)
+   ![GraphAppInstallation](Images/7.clicking_get_info.png)
+
+   ![GraphAppInstallation](Images/8.clicking_update.png)
  
 ## Further reading
 

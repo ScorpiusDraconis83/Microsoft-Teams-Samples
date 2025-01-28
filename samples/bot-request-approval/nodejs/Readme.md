@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows a feature where user can send task request to his manager and manager can approve/reject the request in group chat through bot.
+description: This Teams bot enables users to request task approval from managers within group chats. Managers can quickly approve or reject requests, while other members view request details only.
 products:
 - office-teams
 - office
@@ -14,7 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-request-approval-nodejs
 ---
 
 # Bot request approval
-This sample shows a feature where user can send task request to his manager and manager can approve/reject the request in group chat.
+This sample demonstrates a Teams bot that facilitates task approval requests within group chats. Users can submit requests via Adaptive Cards, which managers can then approve or reject directly in the chat. Other group members can view request details, while only requesters and managers have access to actionable options. The sample supports Azure and includes comprehensive setup guidance, leveraging .NET Core and the Teams Toolkit for Visual Studio.
 
 ## Included Features
 * Bots
@@ -58,10 +58,10 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Setup
     
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
 2. Setup for Bot
-	- Register a AAD aap registration in Azure portal.
+	- Register a Microsoft Entra ID aap registration in Azure portal.
 	- Also, register a bot with Azure Bot Service, following the instructions [here](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration?view=azure-bot-service-3.0).
 	- Ensure that you've [enabled the Teams Channel](https://docs.microsoft.com/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
 	- While registering the bot, use `https://<your_tunnel_domain>/api/messages` as the messaging endpoint.
@@ -120,19 +120,23 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
  
  ## Running the sample.
  
+  ![Initial Card](Images/1.Install.png)
+
+  ![Add TO Chat](Images/2.AddToChat.png)
+
 - Initiated request using bot command `request` in group chat.
 
-  ![Initial Card](Images/InitialCard.png)
+  ![Mention Bot](Images/2.MentionBot.png)
 
 - Card will refresh for requester to fill details.
 
-  ![Request Card](Images/CreateTask.png)
+  ![Task Management](Images/3.TaskManagement.png)
   
 - After submitting the request, requester can edit or cancel the request.
 
     **Note:** Users who created the card will only be able to see the buttons to edit or cancel the request.
 
-  ![Edit/Cancel Card](Images/UserCard.png)
+  ![Edit/Cancel Card](Images/4.ResponseSent.png)
 
 **Manager:**
 
@@ -140,11 +144,11 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
     **Note:** Manager of the task request will only be able to see the buttons to approve or reject the request.
 
-  ![Approve/Reject Card](Images/ManagerCard.png)
+  ![Approve/Reject Card](Images/5.RecievedApproveRequest.png)
 
 - If manager approves or rejects the request, card will be refreshed for all the members in group chat.
 
-  ![Status Card](Images/ApprovedRequest.png)
+  ![Status Card](Images/6.Approved.png)
   
 
 ## Further reading

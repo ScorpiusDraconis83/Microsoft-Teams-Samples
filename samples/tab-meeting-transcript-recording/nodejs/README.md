@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows meeting transcripts and recordings.
+description: This sample application for Microsoft Teams allows users to capture meeting transcripts and recordings, providing an efficient way to document discussions and decisions. With easy setup and integration using Node.js, it enhances team collaboration and ensures that important meeting details are never lost.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-meeting-transcript-recording-
 
 ## Meeting Transcripts Recordings
 
-This sample shows meeting transcripts and recordings.
+This Microsoft Teams sample application facilitates the capture and management of meeting transcripts and recordings, ensuring that key discussions are accurately documented. Designed for seamless integration with Node.js, it offers straightforward setup instructions, enabling teams to focus on collaboration while retaining a comprehensive record of their meetings.
 
 **Interaction with app**
 ![MeetingTranscriptRecordingGif](Images/MeetingTranscriptRecording.gif)
@@ -34,7 +34,7 @@ This sample shows meeting transcripts and recordings.
 
 ### Setup Register you app with Azure AD.
 
-  1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+  1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
   2. Select **New Registration** and on the *register an application page*, set following values:
       * Set **name** to your app name.
       * Choose the **supported account types** (any account type will work)
