@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample showcases messaging extension feature along with link unfurling.
+description: This sample app showcases a Node.js bot that implements link unfurling within Microsoft Teams messaging extensions.
 products:
 - office-teams
 - office
@@ -15,7 +15,10 @@ urlFragment: officedev-microsoft-teams-samples-msgext-link-unfurling
 
 # Teams Link Unfurl Bot Node.js
 
-If you copy and paste a link from `https://www.botframework.com` or your tunnel base url, it wil unfurl inside compose area.
+This sample app illustrates a Node.js bot designed for Microsoft Teams, showcasing the link unfurling feature within messaging extensions. By integrating with Azure, it enables seamless interaction with links shared in chat, improving the user experience.
+If you copy and paste the link `https://teamstestdomain.com/teams/test` or your tunnel base url, it wil unfurl inside compose area.
+
+- Note : To enable link unfurling for your domain, add your domain to the manifest.json file under message handlers.
 
 ## Included Features
 * Bots
@@ -71,7 +74,7 @@ the Teams service needs to call into the bot.
 ## Setup for bot
 In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     
    In the new Azure Bot resource in the Portal, 
@@ -113,8 +116,12 @@ In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/
 
 > Note the Teams `manifest.json` for this sample also includes a Search Query. This Messaging Extension is only introduced in order to enable installation, because there is no mechanism for installing a link unfurling feature in isolation.
 
-If you copy and paste a link from https://www.BotFramework.com into the compose message area the link will unfurl.
+![InstallApp ](Images/InstallApp.png)
+
+If you copy and paste a link from https://teamstestdomain.com/teams/test into the compose message area the link will unfurl.
 ![Link-Unfurling ](Images/Link-Unfurling.png)
+
+![Link-Unfurling ](Images/Link-Unfurling1.png)
 
 
 ## Deploy the bot to Azure

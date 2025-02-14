@@ -37,7 +37,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: graph-teams-tag-${{TEAMSFX_ENV}}
+      name: graph-teams-tag${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -109,6 +109,6 @@ deploy:
     with:
       target: ./.env
       envs:
-          appId: ${{AAD_APP_CLIENT_ID}}
-          clientSecret: ${{SECRET_AAD_APP_CLIENT_SECRET}}
-          applicationIdUri: api://${{TAB_DOMAIN}}/${{AAD_APP_CLIENT_ID}}
+          MicrosoftAppId: ${{AAD_APP_CLIENT_ID}}
+          MicrosoftAppPassword: ${{SECRET_AAD_APP_CLIENT_SECRET}}
+          MicrosoftAppTenantId: ${{TEAMS_APP_TENANT_ID}}

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows a feature where user can check sentiment for teams' chat messages by using messaging extension and Azure Open AI.
+description: This sample allows users to assess the sentiment of messages in Teams chats by utilizing a messaging extension integrated with Open AI. The analysis categorizes messages as positive, negative, or neutral, enhancing understanding of team interactions.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-msgext-ai-sentiment-analysis-csha
 
 # Sentiment Analysis for Teams chat messages using Azure Open AI and messaging extension.
 
-This sample shows a feature where user can analyze sentiments for messages posted in Teams chat using messaging extension and Azure Open AI.
+Discover this sample application that integrates Azure Open AI into a Teams messaging extension, enabling users to analyze the sentiment of chat messages in real-time. The tool categorizes sentiments as positive, negative, or neutral, providing valuable insights into team dynamics and communication patterns.
 
 ## Included Features
 * ME
@@ -31,6 +31,7 @@ This sample shows a feature where user can analyze sentiments for messages poste
 - [csharp](https://csharp.org/en/)
 - [dev tunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) or [ngrok](https://ngrok.com/download) (For local environment testing) latest version (any other tunneling software can also be used).
 - [M365 developer account](https://docs.microsoft.com/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant) or access to a Teams account with the appropriate permissions to install an app.
+- [Teams Toolkit for Visual Studio](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
 
 
 
@@ -40,7 +41,16 @@ This sample shows a feature where user can analyze sentiments for messages poste
 
 > Note: If you are deploying the code, make sure that above mentioned values are properly updated at `env/.env.dev` or `env/.env.dev.user` wherever required.
 
-1. Select **Debug > Start Debugging** or **F5** to run the app in a Teams web client.
+## Run the app (Using Teams Toolkit for Visual Studio)
+
+The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio.
+1. Install Visual Studio 2022 **Version 17.10 Preview 4 or higher** [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+1. Install Teams Toolkit for Visual Studio [Teams Toolkit extension](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+1. In the debug dropdown menu of Visual Studio, select Dev Tunnels > Create A Tunnel (set authentication type to Public) or select an existing public dev tunnel.
+1. In the debug dropdown menu of Visual Studio, select default startup project > **Microsoft Teams (browser)**
+1. In Visual Studio, right-click your **TeamsApp** project and **Select Teams Toolkit > Prepare Teams App Dependencies**
+1. Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps.
+1. Select **Debug > Start Debugging** or **F5** to run the menu in Visual Studio.
 1. In the browser that launches, select the **Add** button to install the app to Teams.
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
@@ -66,7 +76,7 @@ the Teams service needs to call into the bot.
 
    In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - Choose "Accounts in any organizational directory (Any Azure AD directory - Multitenant)" in Authentication section in your App Registration to run this sample smoothly.
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     - In the new Azure Bot resource in the Portal, Ensure that you've [enabled the Teams Channel](https://learn.microsoft.com/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
@@ -93,27 +103,27 @@ the Teams service needs to call into the bot.
 
 5. Setup Manifest for Teams
 - __*This step is specific to Teams.*__
-    - **Edit** the `manifest.json` contained in the ./AppManifest folder to replace your Microsoft App Id (that was created when you registered your app registration earlier) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
+    - **Edit** the `manifest.json` contained in the ./appPackage folder to replace your Microsoft App Id (that was created when you registered your app registration earlier) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
     - **Edit** the `manifest.json` for `validDomains` and replace `{{domain-name}}` with base Url of your domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
-    - **Zip** up the contents of the `AppManifest` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
+    - **Zip** up the contents of the `appPackage` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
 
 
 ## Running the sample
 
 Install Sample to Teams
-![Add Sample ](Images/1.Add_Sample.PNG)
+![Add Sample ](Images/1.Install.png)
 
 Welcome Message then click on 3 dots navigate to ME sentiment analysis
-![Welcome](Images/2.Welcome_SentimentAnalysis.PNG)
+![Welcome](Images/2.SelectSentimentAnalysis.png)
 
 Its shows Sentiment like(positive/negative/neutral) for messages posted in Teams chat.
-![Sentiment Analysis Reuslt](Images/4.Result.PNG)
+![Sentiment Analysis Reuslt](Images/3.Netural.png)
+
+Showing Sentiment Analysis `Positive` depending on Teams chat message
+![Sentiment Analysis Reuslt](Images/4.Positive.png)
 
 Showing Sentiment Analysis `Negative` depending on Teams chat message
-![Sentiment Analysis Reuslt](Images/5.Negative.PNG)
-
-Showing Sentiment Analysis `Neutral` depending on Teams chat message
-![Sentiment Analysis Reuslt](Images/6.Neutral.PNG)
+![Sentiment Analysis Reuslt](Images/5.Negative.png)
 
 ## Further reading
 - [Azure OpenAI Service](https://learn.microsoft.com/azure/ai-services/openai/overview)

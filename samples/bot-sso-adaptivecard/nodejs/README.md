@@ -115,7 +115,7 @@ Refer to [Bot SSO Setup document](https://github.com/OfficeDev/Microsoft-Teams-S
 
 ### 4. Register your Teams Auth SSO with Azure AD
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -169,12 +169,6 @@ Refer to [Bot SSO Setup document](https://github.com/OfficeDev/Microsoft-Teams-S
 
 ## Running the sample
 
-**Upload App:**
-
-![Upload](Images/Upload.png)
-
-![UploadSucess](Images/UploadSucess.png)
-
 **Install App:**
 
 ![InstallApp](Images/InstallApp.png)
@@ -187,7 +181,7 @@ Refer to [Bot SSO Setup document](https://github.com/OfficeDev/Microsoft-Teams-S
 
 ![SignButton](Images/SignButton.png)
 
-**Login Successfully:**
+**Welcome Universal Card:**
 
 ![InstallApp](Images/loginsuccess.png)
 

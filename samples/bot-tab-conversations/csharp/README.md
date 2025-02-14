@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Proactive Tab Conversation
+description: This sample shows how a bot can proactively start and manage tab-based conversations in Microsoft Teams for support inquiries.
 products:
 - office-teams
 - office
@@ -14,8 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-tab-conversations-csharp
 ---
 
 # Proactive Tab Conversations
-The proof of concept demonstrates how to use a bot to proactively create a new conversation each time a support inquiry is filed. The inquiry will be viewable in a tab, and the conversation can continue using conversational tabs.
-This concept can be extended to additional scenarios including proactively creating conversations on a patient, opportunity, incident, etc.
+This sample explores proactive conversations using a Teams bot, where inquiries are created and displayed within a support tab, allowing users to interact via adaptive cards. It supports tab-based interactions, API call authorization based on team membership, and offers both channel and personal tab experiences.
 
 Please see the [Code Tours](#code-tours) section for in-depth explanation of the sample. 
 
@@ -104,6 +103,26 @@ sequenceDiagram
 * Install [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022) or [Visual Studio Code](https://code.visualstudio.com/download) to run and debug the sample code.
   * [.NET Core SDK](https://dotnet.microsoft.com/download) version 6.0
 * [dev tunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) or [ngrok](https://ngrok.com/download) latest version or equivalent tunneling solution
+* [Teams](https://teams.microsoft.com/v2/?clientexperience=t2) Microsoft Teams is installed and you have an account
+* [Teams Toolkit for Visual Studio](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+
+
+##Run the app (Using Teams Toolkit for Visual Studio)
+
+The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio.
+
+1.Install Visual Studio 2022 Version 17.10 Preview 4 or higher Visual Studio
+2.Install Teams Toolkit for Visual Studio Teams Toolkit extension
+3.In the debug dropdown menu of Visual Studio, select Dev Tunnels > Create A Tunnel (set authentication type to Public) or select an existing public dev tunnel.
+4.In the debug dropdown menu of Visual Studio, select default startup project > Microsoft Teams (browser)
+5.In Visual Studio, right-click your TeamsApp project and Select Teams Toolkit > Prepare Teams App Dependencies
+6.Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps.
+7.Select Debug > Start Debugging or F5 to run the menu in Visual Studio.
+8.In the browser that launches, select the Add button to install the app to Teams.
+
+If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
+
+
 
 ### Channel Tab
 
@@ -144,20 +163,20 @@ There is also a personal tab that will list inquires from all the support depart
 
     * Make sure to copy and save the `https` url (it should look like `https://<randomsubdomain>.ngrok-free.app` if you are using Ngrok and if you are using dev tunnels then your URL will be like: `https://<randomsubdomain>.devtunnels.ms`).
 
-* Create an AAD app registration in Azure Portal and also create Azure bot in [Azure Portal](https://portal.azure.com) or in [Developer Portal for Microsoft Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/teams-developer-portal).
+* Create an Microsoft Entra ID app registration in Azure Portal and also create Azure bot in [Azure Portal](https://portal.azure.com) or in [Developer Portal for Microsoft Teams](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/teams-developer-portal).
     * Set the 'Messaging endpoint' for your Azure Bot with `https://<your application domain>/api/messages` like your ngrok URL `https://xxxxx.ngrok-free.app` or dev tunnels URL like : `https://XXXXXX.devtunnels.ms`.
     * *Note: if you restart Ngrok you may have to update the messaging endpoint domain URL aginn in your Azure Bot for local running*
     * Ensure that you've [enabled the Teams Channel](https://docs.microsoft.com/en-us/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
 
-* [Update the AAD App to enable Teams SSO](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad)
-    * When creating the Bot above, an AAD app should either have been created for you, or you should have chosen an AAD app to associate with the bot.
+* [Update the Microsoft Entra ID App to enable Teams SSO](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad)
+    * When creating the Bot above, an Microsoft Entra ID app should either have been created for you, or you should have chosen an Microsoft Entra ID app to associate with the bot.
     * The updates below will allow for us to authenticate and authorize API calls to limit data returned to only channels the user is a member of.
-    * [Follow the instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#to-expose-an-api), to expose an AAD API, creating an Application ID URI, scopes, etc.
+    * [Follow the instructions](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#to-expose-an-api), to expose an Microsoft Entra ID API, creating an Application ID URI, scopes, etc.
 
     * Once you have followed those instructions, you need to [configure the Web authentication platform for the application](https://docs.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-graph-api?tabs=dotnet#to-configure-authentication-for-a-platform). Ensure that you have added the `redirect URI` in this format `https://<<fully-qualified-domain-name.com>>/auth-end` like your ngrok URL 'https://xxxxx-590a-c1b2.ngrok-free.app/auth-end' 
 
     * Ensure the following API permissions are granted to the app for Microsoft Graph access - `email`, `offline_access`, `openid`, `profile`, `Team.ReadBasic.All`    
-    * *Note: if you restart Ngrok you may have to update any fully qualified domain name you have set in your AAD App*
+    * *Note: if you restart Ngrok you may have to update any fully qualified domain name you have set in your Microsoft Entra ID App*
 
 **Setup for code**
 - Clone the repository
@@ -185,9 +204,9 @@ There is also a personal tab that will list inquires from all the support depart
 
 * In `appSettings.json` and `.env` file replace:
     * `<<tunnel-url>>` with your tunnel URL minus the https://.
-    * `<<aad-id>>` with your AAD Application (Client) Id.
+    * `<<aad-id>>` with your Microsoft Entra ID Application (Client) Id.
     * `<<aad-client-secret>>` with the client secret you created above.
-    * `<<tenant-id>>` with the directory id received via creating AAD app registration in your Azure Portal.
+    * `<<tenant-id>>` with the directory id received via creating Microsoft Entra ID app registration in your Azure Portal.
     * `<<teams-app-store-app-id>>` with the App ID assigned to the app in the Teams Admin Center or provided when your app passes validation. If you are sideloading the app you can use the appId from the manifest file, but please note that [deep linking may not work when sideloading](#known-issues).
 
 * Setup Manifest for Teams
@@ -198,7 +217,7 @@ There is also a personal tab that will list inquires from all the support depart
 * Deploying
     * There are detailed instructions for deploying locally below.
 * Sideloading the App
-    * Create a zip containing `manifest.json`, `colorIcon.png` and `outlineIcon.png` from `Source\ConversationalTabs.Web\AppManifest`.
+    * Create a zip containing `manifest.json`, `colorIcon.png` and `outlineIcon.png` from `Source\ConversationalTabs.Web\appPackage`.
     * [You can upload you app by following these instructions](https://docs.microsoft.com/microsoftteams/platform/concepts/deploy-and-publish/apps-upload)
 
 **Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/bot-tab-conversations/csharp/Source/ConversationalTabs.Web/Bot/BotHttpAdapter.cs#L24) line and put your debugger for local debug.

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is a sample application which demonstrates how to get Transcript using Graph API and show it in the task module.
+description: This sample app retrieves meeting transcripts via the Graph API and showcases them in a task module.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-meetings-transcription-nodejs
 
 # Bot to show the transcript of the meeting using Microsoft Graph API.
 
-This is a sample application which demonstrates how to get Transcript using Graph API and show it in the task module.
+The Meeting Transcript Bot utilizes Microsoft Graph API to fetch meeting transcripts and present them within a Teams task module. It supports adaptive cards and bot interactions to enhance the user experience during meetings.
 
 ## Included Features
 * Bots
@@ -50,7 +50,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## Setup
- 1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+ 1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
     -  Log in to the Azure portal from your subscription, and go to the "App registrations" blade  [here](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps). Ensure that you use a tenant where admin consent for API permissions can be provided.
 
   - Click on "New registration", and create an Azure AD application.
@@ -142,6 +142,7 @@ Click on Add Permissions to commit your changes.
 5. Allow applications to access online meetings on behalf of a user
    - Follow this link- [Configure application access policy](https://docs.microsoft.com/en-us/graph/cloud-communication-online-meeting-application-access-policy)
   - **Note**: Copy the User Id you used to granting the policy. You need while configuring the .env file.
+  ![Policy](Images/Policy.png)
 
 6. Setup Manifest for Teams
 - __*This step is specific to Teams.*__
@@ -162,15 +163,23 @@ Click on Add Permissions to commit your changes.
 ## Running the sample.
 
 1. Schedule the meeting and add Meeting Transcript Bot from `Apps` section in that particular scheduled meeting.
-![Add Bot](Images/AddMeetingTranscriptBot.PNG)
+![Add Bot](Images/1.AddMeetingTranscriptBot.PNG)
+
+![AddMeetingGroup](Images/2.AddMeetingGroup.png)
+
+![JoinMeeting](Images/3.JoinMeeting.png)
+
 2. Once meeting started, start the Transcript for the meeting.
-![Start Transcript](Images/StartTranscript.PNG)
+![Start Transcript](Images/4.StartTranscript.png)
+
 3. Once the transcription has started, you can see the live transcription it the meeting UI.
-![Leave Meeting](Images/LeaveMeeting.PNG)
+![Leave Meeting](Images/5.LeaveMeeting.png)
+
 4. Once the Meeting ended, Meeting Transcript Bot will sent a card having a button to open task module.
-![Meeting Transcript Card](Images/MeetingTranscriptCard.PNG)
+![Meeting Transcript Card](Images/6.MeetingTranscriptCard.png)
+
 5. After clicking on `View Transcript` button, you will see the recorded Transcript in the opened Task Module.
-![Transcript Task Module](Images/TranscriptTaskModule.PNG)
+![Transcript Task Module](Images/7.TranscriptTaskModule.png)
 
 ## Interacting with the bot.
 - After uploading the manifest add the bot into meeting.

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample illustrates how you can use Graph API Channel Life Cycle to call Graph APIs through teams tab.
+description: This sample demonstrates how to manage the lifecycle of channels in Microsoft Teams using the Graph API with Node.js.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-channel-lifecycle-nodejs
 
 # Channel life cycle using Node js
 
-This sample show the [Channel](https://docs.microsoft.com/en-us/graph/api/resources/channel?view=graph-rest-1.0) life cycle which includes create, update delete a channel.
+This sample application illustrates the complete lifecycle of channels in Microsoft Teams, leveraging the Graph API to enable creating, updating, and deleting channels. Developed with Node.js, it includes features like tab integration and RSC permissions, along with detailed setup instructions for registration, tunneling, and deployment using the Teams Toolkit for Visual Studio Code.
 
 ## Included Features
 * Tabs
@@ -24,7 +24,7 @@ This sample show the [Channel](https://docs.microsoft.com/en-us/graph/api/resour
 
 ## Interaction with app
    
-  ![](Images/GraphChannelLifeCycleModule.gif)
+  ![GraphChannelLifeCycleModule](Images/GraphChannelLifeCycleModule.gif)
 
 ## Prerequisites
 
@@ -48,7 +48,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## Setup.
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
   - Your app must be registered in the Azure AD portal to integrate with the Microsoft identity platform and call Microsoft Graph APIs. See [Register an application with the Microsoft identity platform](https://docs.microsoft.com/en-us/graph/auth-register-app-v2).
 **NOTE:** When you create app registration, you will create an App ID and App password - make sure you keep these for later.
 
@@ -100,6 +100,15 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
    ![](Images/image2.png)
 
    ![](Images/image3.png)
+
+   ![](Images/image4.png)
+
+   ![](Images/image5.png)
+
+   ![](Images/image6.png)
+
+   ![](Images/image7.png)
+   
 
 
   [Grpah-Channel-lifecycel](https://learn.microsoft.com/en-us/microsoftteams/plan-teams-lifecycle)

@@ -7,14 +7,13 @@ products:
 languages:
 - typescript
 - nodejs
-description: "Sample which demonstrates launching of task module from tab and bot."
+description: "This sample demonstrates how to launch and interact with Teams task modules from tabs and bots using Adaptive Cards and custom HTML."
 urlFragment: teams-module-node
 extensions:
   contentType: samples
   createdDate: "09/17/2018 06:53:22 PM"
 urlFragment: officedev-microsoft-teams-samples-app-task-module-nodejs
 ---
-
 
 # Microsoft Teams task module
 
@@ -42,7 +41,7 @@ Task modules build on the foundation of Microsoft Teams tabs: a task module is e
    
  ## Setup
  
- 1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+ 1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
    
  2. Setup for Bot
 - In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp%2Caadv2).

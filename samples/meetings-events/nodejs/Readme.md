@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample demonstrates use of various meeting events which are available in bot framework v4
+description: This Node.js sample demonstrates how a bot can receive real-time meeting events within Microsoft Teams, enhancing meeting interactivity.
 products:
 - office-teams
 - office
@@ -15,6 +15,8 @@ urlFragment: officedev-microsoft-teams-samples-meetings-events-nodejs
 
 # Realtime meeting events
 
+ Experience real-time meeting and participant events with this C# bot sample for Microsoft Teams. Currently available in public developer preview, it supports Adaptive Cards, bot interactions, and RSC permissions, allowing seamless integration for enhanced meeting management. To try it out, simply upload the provided manifest in your Teams client.
+ 
 Using this Node JS sample, a bot can receive real-time meeting events.
 For reference please check [Real-time Teams meeting events](https://docs.microsoft.com/microsoftteams/platform/apps-in-teams-meetings/api-references?tabs=dotnet)
 
@@ -123,7 +125,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 4) Setup Manifest for Teams (**This step is specific to Teams.**)
 
 - Modify the `manifest.json` in the `/appManifest` folder and replace the following details
-   - `<<App-ID>>` with your AAD app registration id   
+   - `<<App-ID>>` with your Microsoft Entra ID app registration id   
    - `<<VALID DOMAIN>>` with base Url domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
 
     - **Zip** up the contents of the `appManifest` folder to create a `manifest.zip`

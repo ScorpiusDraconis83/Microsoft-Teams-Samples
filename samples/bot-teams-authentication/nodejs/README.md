@@ -20,7 +20,7 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
 The focus of this sample is how to use the Bot Framework support for oauth in your bot. Teams behaves slightly differently than other channels in this regard. Specifically an Invoke Activity is sent to the bot rather than the Event Activity used by other channels. _This Invoke Activity must be forwarded to the dialog if the OAuthPrompt is being used._ This is done by subclassing the ActivityHandler and this sample includes a reusable TeamsActivityHandler. This class is a candidate for future inclusion in the Bot Framework SDK.
 
-The sample uses the bot authentication capabilities in [Azure Bot Service](https://docs.botframework.com), providing features to make it easier to develop a bot that authenticates users to various identity providers such as Azure AD (Azure Active Directory), GitHub, Uber, etc. The OAuth token is then used to make basic Microsoft Graph queries.
+The sample uses the bot authentication capabilities in [Azure Bot Service](https://docs.botframework.com), providing features to make it easier to develop a bot that authenticates users to various identity providers such as Microsoft Entra ID, GitHub, Uber, etc. The OAuth token is then used to make basic Microsoft Graph queries.
 
 > IMPORTANT: The manifest file in this app adds "token.botframework.com" to the list of `validDomains`. This must be included in any bot that uses the Bot Framework OAuth flow.
 
@@ -115,27 +115,23 @@ Refer to [Bot SSO Setup document](https://github.com/OfficeDev/Microsoft-Teams-S
 
 **Install app:**
 
-![add-App ](Images/add-App.png)
+![add-App ](Images/1.Install.png)
 
 **Welcome to teamsbot:**
 
-![added-App ](Images/added-App.png)
+![added-App ](Images/2.Welcome.png)
 
-**Login UI:**
+**Login UI: Authentication success:**
 
-![auth-login ](Images/auth-login.png)
-
-**Authentication success:**
-
-![auth-Success ](Images/auth-Success.png)
+![auth-login ](Images/3.AuthLogin.png)
 
 **Authentication token:**
 
-![auth-Token ](Images/auth-Token.png)
+![auth-Token ](Images/3.AuthToken.png)
 
 **Logout UI:**
 
-![logout ](Images/logout.png)
+![logout ](Images/4.Signout.png)
 
 ## Deploy the bot to Azure
 

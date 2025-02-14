@@ -23,7 +23,7 @@ This sample shows the feature where user can use different formatting on adaptiv
 
 ## Interaction with app
 
-![Types Of Cards](Images/DifferentFormattingCards.gif)
+![Types Of Cards](Images/Bot_Formatting_Cards_nodejs_gif.gif)
 
 ## Try it yourself - experience the App in your Microsoft Teams client
 Please find below demo manifest which is deployed on Microsoft Azure and you can try it yourself by uploading the app package (.zip file link below) to your teams and/or as a personal app. (Sideloading must be enabled for your tenant, [see steps here](https://docs.microsoft.com/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant#enable-custom-teams-apps-and-turn-on-custom-app-uploading)).
@@ -54,7 +54,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 > Note these instructions are for running the sample on your local machine, the tunnelling solution is required because the Teams service needs to call into the bot.
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
 2. Setup for Bot
 - In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp%2Caadv2).
@@ -83,7 +83,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     ```
 
   - In a terminal, navigate to `samples/bot-formatting-cards/nodejs`
-  - Update the `.env` configuration file and replace with placeholder `{{Microsoft-App-Id}}` and `{{Microsoft-App-Password}}`. (Note the MicrosoftAppId is the AppId created in step 1 (Setup AAD app registration in your Azure portal), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
+  - Update the `.env` configuration file and replace with placeholder `{{Microsoft-App-Id}}` and `{{Microsoft-App-Password}}`. (Note the MicrosoftAppId is the AppId created in step 1 (Setup Microsoft Entra ID app registration in your Azure portal), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
 
 **Update mentionSupport json**
 - Bots support user mention with the Azure AD Object ID and UPN, in addition to the existing IDs. The support for two new IDs is available in bots for text messages, Adaptive Cards body, and message extension response. Bots support the mention IDs in conversation and invoke scenarios. The user gets activity feed notification when being @mentioned with the IDs.
@@ -120,7 +120,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
         ```
 
   **Note: In adaptive card, what we are defining (User details) should be exist in the same tenant where you are testing the app (teams' login) etc...**
-  - Update the user AAD object ID in your adaptive card JSON from your tenant's AAD users available in the Azure portal.
+  - Update the user Microsoft Entra object ID in your adaptive card JSON from your tenant's Microsoft Entra ID users available in the Azure portal.
     - Navigate to samples\bot-formatting-cards\nodejs\resources\adaptivePeoplePersonaCardIcon.json
       1) On line 16, replace {{User-Object-ID}}  
       2) On line 17, replace {{User-Display-Name}}
@@ -191,47 +191,151 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 **Install App:**
 
-![InstallApp](Images/1.InstallApp.png)
+![InstallApp](Images/1.Install.png)
 
 **Welcome Message:**
 
-![WelcomeMessage](Images/2.WelcomeMessage.png)
+![WelcomeMessage](Images/2.Welcome_Message.png)
 
-**Mention Card:**
+**Option Page 2:**
 
-![MentionCard](Images/3.MentionCard.png)
+![OptionsPage2](Images/3.OptionsPage2.png)
 
-**Information Mask Card:**
+**Option Page 3:**
 
-![InformationMaskCard](Images/4.InformationMaskCard.png)
+![OptionsPage3](Images/4.OptionsPage3.png)
 
-**FullWidth Adaptive Card:**
+**Option Page 4:**
 
-![FullWidthCard](Images/5.FullWidthCard.png)
+![OptionsPage4](Images/5.OptionsPage4.png)
 
-**Stage View Card:**
+**Option Page 5:**
 
-![StageViewCard](Images/6.StageViewCard.png)
+![OptionsPage5](Images/6.OptionsPage5.png)
 
 **Overflow Menu Card:**
 
-![OverflowMenuCard](Images/7.OverflowMenuCard.png)
+![OverflowMenuCard](Images/7.Mention_support_card.png)
 
-**HTML Connector Card:**
+**Full Width Card:**
 
-![HTMLFormatCard](Images/8.HTMLFormatCard.png)
+![FullWidthCard](Images/9.Full_Width_Card.png)
 
-**AdaptiveCard With Emoji:**
+**Stage View Card:**
 
-![CardWithEmoji](Images/9.CardWithEmoji.png)
+![StageViewCard](Images/10.Stage_View_Card.png)
 
-**Persona Card Icon:**
+**Over Flow Menu Card:**
 
-![Persona](Images/10.Persona.png)
+![OverFlowMenuCard](Images/11.Over_Flow_Menu_Card.png)
 
-**Persona Set Icon:**
+**HTTP Connector Card:**
 
-![PersonaSet](Images/11.PersonaSet.png)
+![HTTPConnectorCard](Images/12.HTTP_Connector_Card.png)
+
+**Adaptive card with Emoji:**
+
+![AdaptivecardwithEmoji](Images/13.Adaptive_card_with_Emoji.png)
+
+**Persona Card Icon**
+![PersonaCardIcon](Images/14.Persona_Card_Icon.png)
+
+**Persona Set Icon**
+![PersonaSetIcon](Images/15.Persona_Set_Icon.png)
+
+**Rounded Corners:**
+![RoundedCorners](Images/19.RoundedCorners.png)
+
+**Fluent Icon Adaptive Card:**
+![FluentIconAdaptiveCard](Images/21.FluentIconAdaptiveCard.png)
+
+**Media Elements Adaptive Card:**
+
+![MediaElementsAdaptiveCard](Images/22.MediaElementsAdaptiveCard.png)
+
+**Media Elements Adaptive Card1:**
+
+![MediaElementsAdaptiveCard1](Images/23.MediaElementsAdaptiveCard1.png)
+
+**Play video media elements in an Adaptive Card:**
+
+![MediaElementsAdaptiveCard2](Images/24.MediaElementsAdaptiveCard2.png)
+
+**Star Ratings Adaptive Cards:**
+
+![StarRatingsAdaptiveCards](Images/25.StarRatingsAdaptiveCards.png)
+
+**Star Ratings Adaptive Cards Validation:**
+
+![StarRatingsAdaptiveCardsValidation](Images/26.StarRatingsAdaptiveCardsValidation.png)
+
+**Star Ratings Feedback:**
+
+![StarRatingsFeedback](Images/27.StarRatingsFeedback.png)
+
+**Conditional Card Before Input:**
+
+![ConditionalCardBeforeInput](Images/30.ConditionalCardBeforeInput.png)
+
+**Conditional Card After Input:**
+
+![ConditionalCardAfterInput](Images/31.ConditionalCardAfterInput.png)
+
+**Scrollable Container Card:**
+
+![ScrollableContainerCard](Images/32.ScrollableContainerCard.png)
+
+**Compound Button Adaptive Card:**
+
+![CompoundButtonAdaptiveCard](Images/33.CompoundButtonAdaptiveCard.png)
+
+**Container Layout:**
+
+![ContainerLayout](Images/34.ContainerLayout.png)
+
+**Donut Chart:**
+
+![DonutChart](Images/35.DonutChart.png)
+
+**Gauge Chart:**
+
+![Gauge Chart](Images/36.GaugeChart.png)
+
+**Horizontal Bar chart:**
+
+![HorizontalBarchart](Images/37.HorizontalBarchart.png)
+
+**Horizontal Bar Stacked Chart:**
+
+![HorizontalBarStackedChart](Images/38.HorizontalBarStackedChart.png)
+
+**Line Chart:**
+
+![LineChart](Images/39.LineChart.png)
+
+**Donut Chart Card:**
+
+![Pie Chart](Images/40.PieChart.png)
+
+**Vertical Bar Chart:**
+
+![VerticalBarChart](Images/41.VerticalBarChart.png)
+
+**Vertical Bar Grouped Chart:**
+
+![VerticalBarGroupedChart](Images/42.VerticalBarGroupedChart.png)
+
+**Mobile:**
+
+![LayoutMobile](Images/20.LayoutMobile.png)
+
+**Star Ratings in Adaptive Cards:**
+
+![StarRatingsAdaptiveCards](Images/28.StarRatingsAdaptiveCards.png)
+
+**Star Ratings Feedback:**
+
+![StarRatingsFeedback](Images/29.StarRatingsFeedback.png)
 
 ## Deploy the bot to Azure
 
@@ -241,6 +345,8 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Format cards in Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?tabs=adaptive-md%2Cdesktop%2Cconnector-html)
 - [Format cards with HTML](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?tabs=adaptive-md%2Cdesktop%2Cconnector-html#format-cards-with-html)
 - [People icon in an Adaptive Card](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?tabs=adaptive-md%2Cdesktop%2Cconnector-html#people-icon-in-an-adaptive-card)
+- [Fluent icon in an Adaptive Card](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?branch=pr-en-us-11655&tabs=adaptive-md%2Cdesktop%2Cconnector-html)
+- [Media elements in Adaptive Card](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/media-elements-in-adaptive-cards?branch=pr-en-us-11492&tabs=desktop%2Cdeveloper-portal-for-teams)
 
 
 <img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/bot-formatting-cards-nodejs" />

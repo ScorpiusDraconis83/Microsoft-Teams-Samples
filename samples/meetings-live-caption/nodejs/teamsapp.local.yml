@@ -11,7 +11,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: meetings-live-caption-${{TEAMSFX_ENV}}
+      name: meetings-live-caption${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -84,5 +84,11 @@ deploy:
         BROWSER: none
         HTTPS: true
         PORT: 3978
+        SSL_CRT_FILE: ${{SSL_CRT_FILE}}
+        SSL_KEY_FILE: ${{SSL_KEY_FILE}}
+  - uses: file/createOrUpdateEnvironmentFile
+    with:
+      target: ./.env
+      envs: 
         SSL_CRT_FILE: ${{SSL_CRT_FILE}}
         SSL_KEY_FILE: ${{SSL_KEY_FILE}}

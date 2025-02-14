@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Enable and configure your apps for Teams meetings to use in stage view
+description: This sample app demonstrates how to enable and configure applications for Microsoft Teams meetings, allowing users to interact with a shared meeting stage using the Live Share SDK.
 products:
 - office-teams
 - office
@@ -15,8 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-meetings-stage-view-csharp
 
 # Meetings Stage View
 
-This App helps to enable and configure your apps for Teams meetings. This app covers Shared meeting stage using [Live Share SDK](https://aka.ms/livesharedocs).
-For reference please check [Enable and configure your apps for Teams meetings](https://docs.microsoft.com/microsoftteams/platform/apps-in-teams-meetings/enable-and-configure-your-app-for-teams-meetings)
+This sample application enables the configuration and use of shared meeting stages within Microsoft Teams, leveraging the [Live Share SDK](https://aka.ms/livesharedocs) for real-time interaction. It includes features such as a meeting side panel and theme customization options, allowing users to enhance their collaborative experience during meetings. The demo manifest is available for testing in your Microsoft Teams client.
 
 ## Included Features
 * Meeting Stage
@@ -53,13 +52,32 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
   
 - [Teams](https://teams.microsoft.com) Microsoft Teams is installed and you have an account
 
+-[Teams Toolkit for Visual Studio](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+
+
+##Run the app (Using Teams Toolkit for Visual Studio)
+
+The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio.
+
+1.Install Visual Studio 2022 Version 17.10 Preview 4 or higher Visual Studio
+2.Install Teams Toolkit for Visual Studio Teams Toolkit extension
+3.In the debug dropdown menu of Visual Studio, select Dev Tunnels > Create A Tunnel (set authentication type to Public) or select an existing public dev tunnel.
+4.In the debug dropdown menu of Visual Studio, select default startup project > Microsoft Teams (browser)
+5.In Visual Studio, right-click your TeamsApp project and Select Teams Toolkit > Prepare Teams App Dependencies
+6.Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps.
+7.Select Debug > Start Debugging or F5 to run the menu in Visual Studio.
+8.In the browser that launches, select the Add button to install the app to Teams.
+
+If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
+
+
 
 ## Setup.
 
 **This capability is currently available in developer preview only**
 
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
     > NOTE: When you create your app registration, you will create an App ID and App password - make sure you keep these for later.
 
 
@@ -137,14 +155,14 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
 5. Setup Manifest for Teams
 - __*This step is specific to Teams.*__
-    - **Edit** the `manifest.json` contained in the ./AppManifest folder to replace your Microsoft App Id (that was created when you registered your app registration earlier) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
+    - **Edit** the `manifest.json` contained in the ./appPackage folder to replace your Microsoft App Id (that was created when you registered your app registration earlier) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
     - **Edit** the `manifest.json` for `validDomains` and replace `{{domain-name}}` with base Url of your domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
-    - **Zip** up the contents of the `AppManifest` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
+    - **Zip** up the contents of the `appPackage` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
 
 - Upload the manifest.zip to Teams (in the Apps view click "Upload a custom app")
    - Go to Microsoft Teams. From the lower left corner, select Apps
    - From the lower left corner, choose Upload a custom App
-   - Go to your project directory, the ./AppManifest folder, select the zip folder, and choose Open.
+   - Go to your project directory, the ./appPackage folder, select the zip folder, and choose Open.
    - Select Add in the pop-up dialog box. Your app is uploaded to Teams.
 
 ## Running the sample
@@ -163,11 +181,11 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
 - App in stage view.
 
-![Stage View Screen](Images/stage_view.png)
+![Stage View Screen](Images/10.StageView2.png)
 
 - Sharing specific part of your app to the meeting stage.
 
-![Share Specific part screen](Images/share_specific_part.png)
+![Share Specific part screen](Images/9.ShareSpecificPart.png)
 
 **NOTE: Currently Live Share SDK is not supported in mobiles.**
 
@@ -187,39 +205,38 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
     - Search for your app `App in meeting` and add it.
 
-![Select App](Images/select_app.png)
+![Select App](Images/1.Install.png)
 
     - Join the meeting and click on the app icon at the top
     - This will open a sidepanel with `Share` icon at top to share the app for collaboration in stage view.
 
-![App icon](Images/app_icon.png)
-
-![Share Icon](Images/share_icon.png)
+![Share Icon](Images/2.StageView.png)
 
     - You can now interact with the app.
 
-
 - Add Details for collaboration.
 
-![Add Button](Images/add_button.png)
+![Add Doing](Images/3.AddDoing.png)
 
-![Add Details](Images/add_details.png)
+![Add ToDo](Images/4.AddToDo.png)
+
+![Add Done](Images/5.AddDone.png)
 
 - App in sidepanel.
 
-![App in sidepanel](Images/side_panel.png)
+![App in sidepanel](Images/1.AppInMeetings.png)
 
 - Sharing specific parts of app.
 
-![Share specific part](Images/share_specific_part_sidepanel.png)
+![Share specific part](Images/9.ShareSpecificPart.png)
 
 ## Interaction with App theme when Teams Theme changes.
 
-![light](Images/light.PNG)
+![light](Images/2.StageView.png)
 
-![dark](Images/dark.PNG)
+![dark](Images/7.DarkTheme.png)
 
-![contrast](Images/contrast.PNG)
+![contrast](Images/8.ContrastTheme.png)
 
 ## Further reading
 

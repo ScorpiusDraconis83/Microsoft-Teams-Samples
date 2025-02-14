@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Microsoft Teams tab sample app for demonstrating tab in stage view
+description: This sample app demonstrates the use of Teams tab in stage view using Node.js, featuring collaborative elements and interactive capabilities.
 products:
 - office-teams
 - office
@@ -15,12 +15,17 @@ urlFragment: officedev-microsoft-teams-samples-tab-stage-view-nodejs
 
 # Stage View
 
+This sample app showcases the capabilities of Microsoft Teams tabs in stage view using Node.js. It demonstrates collaborative features such as multi-window support and interactive elements, allowing users to engage dynamically through adaptive cards and deep linking for a richer experience in Teams.
 This App talks about the Teams tab in stage view with Nodejs.
+
 For reference please check [Tabs link unfurling and Stage View](https://docs.microsoft.com/microsoftteams/platform/tabs/tabs-link-unfurling)
 
 ## Included Features
 * Bots
 * Stage View (tabs)
+* Collaborative Stageview
+* Stageview Multi-window (PopOut)
+* Stageview Modal
 
 ## Interaction with app
 
@@ -124,7 +129,7 @@ Also update `BaseUrl` according to your code runtime environment.
    -  Edit the `manifest.json` in the `appManifest` folder and replace the following details:
    - `<<MANIFEST-ID>>` with some unique GUID or `MicrosoftAppId`
    - `<<BASE-URL>>` with your application's base url, e.g. https://1234.ngrok-free.app
-   - `<<YOUR-MICROSOFT-APP-ID>>` with the `MicrosoftAppId` received from AAD app registration in Azure portal.
+   - `<<YOUR-MICROSOFT-APP-ID>>` with the `MicrosoftAppId` received from Microsoft Entra ID app registration in Azure portal.
    - `<<DOMAIN-NAME>>` with the ngrok URL or app hosted base url.
    **Note:** If you want to test your app across multi hub like: Outlook/Office.com, please update the `manifest.json` in the `tab-stage-view\nodejs\appManifest_Hub` folder with the required values.
    - **Zip** up the contents of the `appManifest` folder to create a `Manifest.zip` or `appManifest_Hub` folder to create a `appManifest_Hub.zip`
@@ -141,37 +146,41 @@ Also update `BaseUrl` according to your code runtime environment.
 
 **Install App:**
 
-![InstallApp](Images/Install.png)
+![InstallApp](Images/1.Install.png)
 
 **Welcome message with feature explanation and Adaptive Card with actions:**
 
-![Welcome Message](Images/welcomeAction.png)
+![Welcome Message](Images/2.HelloAndWelcomeCard.png)
 
 **Open the URL in tab stage view:**
 
-![InstallApp](Images/ClickButton.png)
+![InstallApp](Images/3.Bot-ViewViaCardAction.png)
 
  **Click view via card action:**
 
-![Stage View in tab](Images/CollaborativeStageView.png)
+![Stage View in tab](Images/4.Bot-OpenViaDeeplinkLinkButton.png)
 
  **Click view via deeplink:**
 
- ![Tab View](Images/viaDeeplink.png)    
+ ![Tab View](Images/viaDeeplink.png)   
 
 **Opening Collaborative- Desktop Stage View**. Please refer [Collaborative Stage view](https://review.learn.microsoft.com/en-us/microsoftteams/platform/tabs/tabs-link-unfurling?branch=pr-en-us-7891#collaborative-stage-view) for more details.
 
-![Stage View in tab](Images/CollaborativeStageView.png)
+ ![Stage View in tab](Images/5.Tab-PopOutWithChat.png)
+
+ ![OpenMode Model](Images/6.Tab-PopOut.png) 
+
+ ![OpenMode PopOut](Images/7.Tab-Model.png) 
 
 **Opening stage view from Adaptive card via deep link:**
 
-![Stage View Deep Link](Images/viaDeeplink.png)
+![Stage View Deep Link](Images/4.Bot-OpenViaDeeplinkLinkButton.png)
 
 **Web Stage View:**
 
 ![LinkUnfurlingStageView](Images/LinkUnfurlingStageView.png)
 
-**Opening stage view from unfurling link. If you copy and paste a link from https://www.BotFramework.com into the compose message area, the link will unfurl.**
+**Opening stage view from unfurling link. If you copy and paste a link from https://tabstageview.com/card into the compose message area, the link will unfurl.**
 
 ![LinkUnfurlingText](Images/LinkUnfurlingText.png)
 
@@ -221,7 +230,7 @@ Also update `BaseUrl` according to your code runtime environment.
 
 ![OpenAppIcon](Images/OpenAppIcon.png)
 
-**Opening stage view from unfurling link. If you copy and paste a link from https://www.BotFramework.com into the compose message area the link will unfurl.**
+**Opening stage view from unfurling link. If you copy and paste a link from https://tabstageview.com/card into the compose message area the link will unfurl.**
 
 ![Outlook Unfurling](Images/OutlookUnfurling.png)
 

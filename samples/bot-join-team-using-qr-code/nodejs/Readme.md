@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample demos a feature where user can join a team using QR code containing the team's id through bot.
+description: This bot allows users to join Microsoft Teams by scanning a team-specific QR code.
 products:
 - office-teams
 - office
@@ -14,10 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-join-team-using-qr-code-nodej
 ---
 
 # Join a team using QR code sample
-
-This sample demos a feature where user can join a team using QR code having team id.
-
-User can generate a new QR code (contains team id information) and then scan the QR code to join the team.
+This Microsoft Teams sample bot helps users join a team by scanning a QR code that contains the team ID. It allows users to generate QR codes, leverages the Graph API, and supports both bot and Adaptive Cards functionality. Ideal for mobile clients, this feature enhances team onboarding with ease.
 
 `Currently, Microsoft Teams support for QR or barcode scanner capability is only supported for mobile clients`
 
@@ -119,7 +116,7 @@ b) Navigate to **API Permissions**, and make sure to add the follow permissions:
     ```
 
 **Manually update the manifest.json**
-- Edit the `manifest.json` contained in the  `appManifest/` folder to replace with your MicrosoftAppId (that was created in previous step while doing AAD app registration and is the same value of MicrosoftAppId in `.env` file) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
+- Edit the `manifest.json` contained in the  `appManifest/` folder to replace with your MicrosoftAppId (that was created in previous step while doing Microsoft Entra ID app registration and is the same value of MicrosoftAppId in `.env` file) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
 
 - Also, update {{domain-name}} in your manifest `validDomains` section with your app domain like ngrok domain `1234.ngrok-free.app` or dev tunnels domain `12345.devtunnels.ms` excluding http/https.
 

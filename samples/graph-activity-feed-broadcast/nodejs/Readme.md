@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows a feature where user can broadcast a message to all members of organization using activty feed notification through teams tab.
+description: This sample allows users to broadcast messages to all organization members via Teams activity feed notifications using Graph APIs.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-activity-feed-broadcast-nod
 
 # Broadcast message to organization using activity feed notification (Graph APIs)
 
-This sample shows a feature where user can broadcast a message to all members of organization using activty feed notification through teams tab.
+This sample enables users to broadcast messages across the organization using Teams activity feed notifications, powered by Microsoft Graph APIs. It includes features such as Teams SSO for tabs, activity feed notifications, and Graph API integration, making it an efficient way to notify all members directly within the Teams environment.
 
 ## Included Features
 * Teams SSO (tabs)
@@ -50,7 +50,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ### 1. Setup for App Registration
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)

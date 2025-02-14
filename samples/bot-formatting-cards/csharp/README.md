@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample which demonstrates different formatting supported in cards using bot.
+description: This sample bot demonstrates how to use various formatting styles on adaptive cards within Microsoft Teams. It includes capabilities like mentions, persona icons, and responsive layouts.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-formatting-cards-csharp
 ---
 ## Different formatting on cards
 
-This sample feature shows how to use different formatting on cards using bot.
+Explore adaptive card formatting in Microsoft Teams with this bot sample. It includes features like mentions, emojis, persona icons, and different card layouts to enhance user interaction and presentation.
 
 ## Included Features
 * Bots
@@ -23,7 +23,7 @@ This sample feature shows how to use different formatting on cards using bot.
 
 ## Interaction with app
 
-![Types Of Cards](BotFormattingCards/Images/DifferentFormattingCards.gif)
+![Types Of Cards](BotFormattingCards/Images/bot_formatting_cards.gif)
 
 ## Try it yourself - experience the App in your Microsoft Teams client
 Please find below demo manifest which is deployed on Microsoft Azure and you can try it yourself by uploading the app manifest (.zip file link below) to your teams and/or as a personal app. (Sideloading must be enabled for your tenant, [see steps here](https://docs.microsoft.com/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant#enable-custom-teams-apps-and-turn-on-custom-app-uploading)).
@@ -41,10 +41,24 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
   dotnet --version
   ```
 - Publicly addressable https url or tunnel such as [dev tunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) or [ngrok](https://ngrok.com/) latest version or [Tunnel Relay](https://github.com/OfficeDev/microsoft-teams-tunnelrelay)
+- [Teams Toolkit for Visual Studio](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+
+## Run the app (Using Teams Toolkit for Visual Studio)
+
+The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio.
+1. Install Visual Studio 2022 **Version 17.10 Preview 4 or higher** [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+1. Install Teams Toolkit for Visual Studio [Teams Toolkit extension](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+1. In the debug dropdown menu of Visual Studio, select Dev Tunnels > Create A Tunnel (set authentication type to Public) or select an existing public dev tunnel.
+1. In the debug dropdown menu of Visual Studio, select default startup project > **Microsoft Teams (browser)**
+1. In Visual Studio, right-click your **TeamsApp** project and **Select Teams Toolkit > Prepare Teams App Dependencies**
+1. Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps.
+1. Select **Debug > Start Debugging** or **F5** to run the menu in Visual Studio.
+1. In the browser that launches, select the **Add** button to install the app to Teams.
+> If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## Setup
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
     1) Select **New Registration** and on the *register an application page*, set following values:
         * Set **name** to your app name.
@@ -96,7 +110,7 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
     - Select `BotFormattingCards.csproj` file
     - Press `F5` to run the project   
   
-- Update the `appsettings.json` configuration file and replace with placeholder `{{Microsoft-App-Id}}` and `{{Microsoft-App-Password}}`. (Note the MicrosoftAppId is the AppId created in step 1 (Setup AAD app registration in your Azure portal), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
+- Update the `appsettings.json` configuration file and replace with placeholder `{{Microsoft-App-Id}}` and `{{Microsoft-App-Password}}`. (Note the MicrosoftAppId is the AppId created in step 1 (Setup Microsoft Entra ID app registration in your Azure portal), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
 
 **Update mentionSupport json**
 - Bots support user mention with the Azure AD Object ID and UPN, in addition to the existing IDs. The support for two new IDs is available in bots for text messages, Adaptive Cards body, and message extension response. Bots support the mention IDs in conversation and invoke scenarios. The user gets activity feed notification when being @mentioned with the IDs.
@@ -132,7 +146,7 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
         ```
    
    **Note: In adaptive card, what we are defining (User details) should be exist in the same tenant where you are testing the app (teams' login) etc...**
-  - Update the user AAD object ID in your adaptive card JSON from your tenant's AAD users available in the Azure portal.
+  - Update the user Microsoft Entra object ID in your adaptive card JSON from your tenant's Microsoft Entra ID users available in the Azure portal.
     - Navigate to samples\bot-formatting-cards\csharp\BotFormattingCards\Resources\adaptivePeoplePersonaCardIcon.json
       1) On line 16, replace {{User-Object-ID}}  
       2) On line 17, replace {{User-Display-Name}}
@@ -176,65 +190,197 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
 5. Setup Manifest for Teams
 - __*This step is specific to Teams.*__
-    - **Edit** the `manifest.json` contained in the ./Manifest folder to replace your MicrosoftAppId (that was created when you registered your app registration earlier) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
+    - **Edit** the `manifest.json` contained in the ./appPackage folder to replace your MicrosoftAppId (that was created when you registered your app registration earlier) *everywhere* you see the place holder string `{{Microsoft-App-Id}}` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`)
     - **Edit** the `manifest.json` for `validDomains` and replace `{{domain-name}}` with base Url of your domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
-    - **Zip** up the contents of the `Manifest` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
+    - **Zip** up the contents of the `appPackage` folder to create a `manifest.zip` (Make sure that zip file does not contains any subfolder otherwise you will get error while uploading your .zip package)
 
 - Upload the manifest.zip to Teams (in the Apps view click "Upload a custom app")
    - Go to Microsoft Teams. From the lower left corner, select Apps
    - From the lower left corner, choose Upload a custom App
-   - Go to your project directory, the ./AppManifest folder, select the zip folder, and choose Open.
+   - Go to your project directory, the ./appPackage folder, select the zip folder, and choose Open.
    - Select Add in the pop-up dialog box. Your app is uploaded to Teams.
 
 ## Running the sample
 
 **Install App:**
 
-![InstallApp](BotFormattingCards/Images/1.InstallApp.png)
+![InstallApp](BotFormattingCards/Images/1.Install.png)
 
 **Welcome Message:**
 
-![WelcomeMessage](BotFormattingCards/Images/2.WelcomeMessage.png)
-
-**Type Of Cards:**
-
-![TypeOfCards](BotFormattingCards/Images/3.TypeOfCards.png)
+![WelcomeMessage](BotFormattingCards/Images/2.Welcome_Message.png)
 
 **Mention Card:**
 
-![MentionCard](BotFormattingCards/Images/4.MentionCard.png)
+![MentionCard](BotFormattingCards/Images/3.Mention_support_card.png)
 
 **Information Mask Card:**
 
-![InformationMaskCard](BotFormattingCards/Images/5.InformationMaskCard.png)
+![InformationMaskCard](BotFormattingCards/Images/4.Info_Mask_card.png)
 
 **FullWidth Adaptive Card:**
 
-![FullWidthCard](BotFormattingCards/Images/6.FullWidthCard.png)
+![FullWidthCard](BotFormattingCards/Images/5.Full_Width_Card.png)
 
 **Stage View Card:**
 
-![StageViewCard](BotFormattingCards/Images/7.StageViewCard.png)
+![StageViewCard](BotFormattingCards/Images/6.Stage_View_Card.png)
 
 **Overflow Menu Card:**
 
-![OverflowMenuCard](BotFormattingCards/Images/8.OverflowMenuCard.png)
+![OverflowMenuCard](BotFormattingCards/Images/7.Over_Flow_Menu_Card.png)
 
 **HTML Connector Card:**
 
-![HTMLFormatCard](BotFormattingCards/Images/9.HTMLFormatCard.png)
+![HTMLFormatCard](BotFormattingCards/Images/8.HTTP_Connector_Card.png)
 
 **AdaptiveCard With Emoji:**
 
-![CardWithEmoji](BotFormattingCards/Images/10.CardWithEmoji.png)
+![CardWithEmoji](BotFormattingCards/Images/9.Adaptive_card_with_Emoji.png)
 
 **Persona Card Icon:**
 
-![PersonaCardIcon](BotFormattingCards/Images/12.PersonaCardIcon.png)
+![Persona](BotFormattingCards/Images/10.Persona_Card_Icon.png)
 
 **Persona Set Icon:**
 
-![PersonaCardSetIcon](BotFormattingCards/Images/13.PersonaCardSetIcon.png)
+![PersonaSet](BotFormattingCards/Images/11.Persona_Set_Icon.png)
+
+**Adaptive Card updated to be responsive using targetWidth:**
+
+![Layout](BotFormattingCards/Images/12.Layout_Card.png)
+
+**Border Adaptive Card:**
+
+![Border](BotFormattingCards/Images/13.Border.png)
+
+**Rounded Corners Adaptive Card:**
+
+![Rounded Corners](BotFormattingCards/Images/14.RoundedCorners.png)
+
+**Select Fluent Icon:**
+
+![FluentIconAdaptiveCard](BotFormattingCards/Images/16.FluentIconAdaptiveCard.png)
+
+**Fluent icon in an Adaptive Card:**
+
+![FluentIconsSelectCard](BotFormattingCards/Images/17.FluentIconsSelectCard.png)
+
+**Select Media elements:**
+
+![MediaElementsAdaptiveCard](BotFormattingCards/Images/18.MediaElementsAdaptiveCard.png)
+
+**Media elements in Adaptive Card:**
+
+![MediaElementsAdaptiveCard](BotFormattingCards/Images/19.MediaElementsAdaptiveCard.png)
+
+**All Media elements in Adaptive Card:**
+
+![MediaElementsAdaptiveCard1](BotFormattingCards/Images/20.MediaElementsAdaptiveCard1.png)
+
+**Play video media elements in an Adaptive Card:**
+
+![MediaElementsAdaptiveCard2](BotFormattingCards/Images/21.MediaElementsAdaptiveCard2.png)
+
+**Select Star Ratings:**
+
+![SelectStarRatings](BotFormattingCards/Images/22.SelectStarRatings.png)
+
+**Star ratings in Adaptive Cards:**
+
+![StarRatingsAdaptiveCards](BotFormattingCards/Images/23.StarRatingsAdaptiveCards.png)
+
+**Star ratings in Adaptive Cards validation:**
+
+![StarRatingsAdaptiveCardsValidation](BotFormattingCards/Images/24.StarRatingsAdaptiveCardsValidation.png)
+
+**Star Ratings Feedback:**
+
+![StarRatingsFeedback](BotFormattingCards/Images/25.StarRatingsFeedback.png)
+
+**Conditional and Scrollable buttons:**
+
+![ConditionalAndScrollableButtons](BotFormattingCards/Images/28.ConditionalAndScrollableButtons.png)
+
+**Conditional Card Before Input:**
+
+![ConditionalCardBeforeInput](BotFormattingCards/Images/29.ConditionalCardBeforeInput.png)
+
+**Conditional Card After Input:**
+
+![ConditionalCardBeforeInput](BotFormattingCards/Images/30.ConditionalCardAfterInput.png)
+
+**Scrollable Container Card:**
+
+![ScrollableContainerCard](BotFormattingCards/Images/31.ScrollableAdaptiveCard.png)
+
+**Compound Button Option:**
+
+![CompoundButtonOption](BotFormattingCards/Images/32.CompoundButton.png)
+
+**Compound Button Adaptive Card:**
+
+![CompoundButtonAdaptiveCard](BotFormattingCards/Images/33.CompoundButtonAdaptiveCard.png)
+
+**Container Layout and Donut Chart Buttons:**
+
+![ContainerLayoutandDonutChartButtons](BotFormattingCards/Images/34.ContainerAndDonutOptions.png)
+
+**Chart Buttons:**
+
+![ChartButtons](BotFormattingCards/Images/35.ChartOptions.png)
+
+**Remaining Chart Buttons:**
+
+![RemainingChartButtons](BotFormattingCards/Images/36.RemainingChartOptions.png)
+
+**Container Layout:**
+
+![ContainerLayout](BotFormattingCards/Images/37.ContainerLayout.png)
+
+**Donut Chart:**
+
+![DonutChart](BotFormattingCards/Images/38.DonutChart.png)
+
+**Gauge Chart:**
+
+![GaugeChart](BotFormattingCards/Images/39.GaugeChart.png)
+
+**Horizontal Chart:**
+
+![HorizontalChart](BotFormattingCards/Images/40.HorizontalChart.png)
+
+**Horizontal Stacked Chart:**
+
+![HorizontalStackedChart](BotFormattingCards/Images/41.HorizontalChartStacked.png)
+
+**Line Chart:**
+
+![LineChart](BotFormattingCards/Images/42.LineChart.png)
+
+**Pie Chart:**
+
+![PieChart](BotFormattingCards/Images/43.PieChart.png)
+
+**Vertical Bar Chart:**
+
+![VerticalBarChart](BotFormattingCards/Images/44.VerticalBarChart.png)
+
+**Vertical Bar Grouped Chart:**
+
+![Vertical Bar Chart](BotFormattingCards/Images/45.VerticalBarGroupedChart.png)
+
+**Mobile:**
+
+![LayoutMobile](BotFormattingCards/Images/15.LayoutMobile.png)
+
+**Star Ratings in Adaptive Cards:**
+
+![StarRatingsAdaptiveCards](BotFormattingCards/Images/26.StarRatingsAdaptiveCards.png)
+
+**Star Ratings Feedback:**
+
+![StarRatingsFeedback](BotFormattingCards/Images/27.StarRatingsFeedback.png)
 
 ## Deploy the bot to Azure
 
@@ -244,6 +390,7 @@ To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](htt
 - [Format cards in Microsoft Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?tabs=adaptive-md%2Cdesktop%2Cconnector-html)
 - [Format cards with HTML](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?tabs=adaptive-md%2Cdesktop%2Cconnector-html#format-cards-with-html)
 - [People icon in an Adaptive Card](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?tabs=adaptive-md%2Cdesktop%2Cconnector-html#people-icon-in-an-adaptive-card)
-
+- [Fluent icon in an Adaptive Card](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/cards-format?branch=pr-en-us-11655&tabs=adaptive-md%2Cdesktop%2Cconnector-html)
+- [Media elements in Adaptive Card](https://learn.microsoft.com/en-us/microsoftteams/platform/task-modules-and-cards/cards/media-elements-in-adaptive-cards?branch=pr-en-us-11492&tabs=desktop%2Cdeveloper-portal-for-teams)
 
 <img src="https://pnptelemetry.azurewebsites.net/microsoft-teams-samples/samples/bot-formatting-cards-csharp" />

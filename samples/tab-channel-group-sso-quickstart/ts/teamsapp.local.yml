@@ -37,7 +37,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: tab-channel-group-sso-quickstart-${{TEAMSFX_ENV}}
+      name: tab-channel-group-sso-quickstart${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -96,6 +96,12 @@ deploy:
   - uses: cli/runNpmCommand
     with:
       workingDirectory: .
+      args: install --legacy-peer-deps
+
+  # Run npm command for api-server
+  - uses: cli/runNpmCommand
+    with:
+      workingDirectory: ./api-server
       args: install --no-audit
 
 # Generate runtime environment variables for tab

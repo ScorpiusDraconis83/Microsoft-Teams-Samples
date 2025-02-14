@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Microsoft Teams sample app for Sending Activity feed notification using Graph API in a Teams Tab.
+description: This Microsoft Teams sample app demonstrates how to send activity feed notifications using the Microsoft Graph API in a Teams Tab.
 products:
 - office-teams
 - office
@@ -15,9 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-activity-feed-nodejs
 
 # Activity Feed Notification
 
-Nodejs Activity Feed sample using Tab.
-
-This sample has been created using [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta), it shows how to trigger a Activity feed notification from your Tab, it triggers the feed notification for User, Chat and Team scope and send back to conversation.
+This sample application demonstrates how to utilize the Microsoft Graph API to send activity feed notifications from a Teams Tab. It features support for Teams Single Sign-On (SSO) and allows triggering activity feed notifications across user, chat, and team scopes, seamlessly integrating with the Microsoft Teams platform. Created using [Microsoft Graph](https://docs.microsoft.com/en-us/graph/overview?view=graph-rest-beta), this sample shows how to trigger notifications that are sent back to conversations, enhancing user engagement within Teams.
 
 ## Included Features
 * Teams SSO (tabs)
@@ -51,7 +49,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ### 1. Setup for App Registration
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -81,11 +79,10 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     - `User.Read` (enabled by default)
     - `ChannelMessage.Send`
     - `ChatMessage.Send`
-    - `Chat.ReadWrite`
-    - `TeamsActivity.Send`    
+    - `Chat.ReadWrite`    
     - `TeamsAppInstallation.ReadForUser`.
 
--  You need to add `TeamsActivity.Send` and `Directory.Read.All` as Application level permissions
+-  You need to add `Directory.Read.All` as Application level permissions
 
 -   Click on Add permissions. Please make sure to grant the admin consent for the required permissions.
 13. Navigate to **Authentication**

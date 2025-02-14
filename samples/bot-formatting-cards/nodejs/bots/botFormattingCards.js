@@ -12,6 +12,25 @@ const HTMLConnectorCard = require('../resources/formatHTMLConnectorCard.json');
 const CardWithEmoji = require('../resources/adaptiveCardWithEmoji.json');
 const PeoplePersonaCardIcon = require('../resources/adaptivePeoplePersonaCardIcon.json');
 const PeoplePersonaCardSetIcon = require('../resources/adaptivePeoplePersonaCardSetIcon.json');
+const CodeBlocksCard = require('../resources/codeBlocksCard.json');
+const AdaptiveCardResponsiveLayout = require('../resources/AdaptiveCardResponsiveLayout.json');
+const AdaptiveCardBorders = require('../resources/adaptiveCardBorders.json');
+const AdaptiveCardRoundedCorners = require('../resources/adaptiveCardRoundedCorners.json');
+const adaptiveCardFluentIcons = require('../resources/adaptiveCardFluentIcon.json');
+const adaptiveCardMediaElements = require('../resources/adaptiveCardMediaElements.json');
+const adaptiveCardStarRatings = require('../resources/adaptiveCardStarRatings.json');
+const adaptiveCardConditional = require('../resources/adaptiveCardConditional.json');
+const adaptiveCardScrollable = require('../resources/adaptiveCardScrollable.json');
+const adaptiveCardCompoundButton = require('../resources/adaptiveCardCompoundButton.json');
+const adaptiveCardContainerLayouts = require('../resources/adaptiveCardContainerLayouts.json');
+const adaptiveCardDonutChart = require('../resources/adaptiveCardDonutChart.json');
+const adaptiveCardGaugeChart = require('../resources/adaptiveCardGaugeChart.json');
+const adaptiveCardHorizontalBarChart = require('../resources/adaptiveCardHorizontalBarChart.json');
+const adaptiveCardHorizontalBarStackedChart = require('../resources/adaptiveCardHorizontalBarStacked.json');
+const adaptiveCardLineChart = require('../resources/adaptiveCardLineChart.json');
+const adaptiveCardPieChart = require('../resources/adaptiveCardPieChart.json');
+const adaptiveCardVerticalBarChart = require('../resources/adaptiveCardVerticalBarChart.json');
+const adaptiveCardVerticalBarGroupedChart = require('../resources/adaptiveCardVerticalBarGroupedChart.json');
 
 class BotFormattingCards extends ActivityHandler {
     constructor() {
@@ -29,7 +48,7 @@ class BotFormattingCards extends ActivityHandler {
             const text = context.activity.text;
 
             // Create an array with the valid card options.
-            const adaptiveFormatCards = ['MentionSupport', 'InfoMasking', 'FullWidthCard', 'StageViewImages', 'OverflowMenu', 'HTMLConnector', 'CardWithEmoji','Persona','PersonaSet'];
+            const adaptiveFormatCards = ['CodeBlock', 'MentionSupport', 'InfoMasking', 'FullWidthCard', 'StageViewImages', 'OverflowMenu', 'HTMLConnector', 'CardWithEmoji','Persona','PersonaSet','Layout', 'Borders', 'RoundedCorners', 'FluentIcons', 'MediaElements','StarRatings', 'ConditionalCard', 'ScrollableContainer', 'CompoundButton', 'ContainerLayout', 'DonutChart', 'GaugeChart', 'HorizontalChart', 'HorizontalChartStacked', 'LineChart', 'PieChart', 'VerticalBarChart', 'VerticalBarGroupedChart'];
 
             // If the `text` is in the Array, a valid card was selected and sends.
             if (adaptiveFormatCards.includes(text)) {
@@ -70,13 +89,99 @@ class BotFormattingCards extends ActivityHandler {
                     case "PersonaSet":
                         await context.sendActivity({ attachments: [this.sendPersonaCardSetIcons()] });
                         break;
+
+                    case "CodeBlock":
+                        await context.sendActivity({ attachments: [this.sendCodeBlock()] });
+                        break;
+                    
+                    case "Layout":
+                        await context.sendActivity({ attachments: [this.sendLayoutCard()] });
+                        break;
+
+                    case "Borders":
+                        await context.sendActivity({ attachments: [this.sendBordersCard()] });
+                        break;
+
+                    case "RoundedCorners":
+                        await context.sendActivity({ attachments: [this.sendRoundedCornersCard()] });
+                        break;
+
+                    case "FluentIcons":
+                        await context.sendActivity({ attachments: [this.SendFluentIconsCard()] });
+                        break;
+
+                    case "MediaElements":
+                        await context.sendActivity({ attachments: [this.SendMediaElementsCard()] });
+                        break;
+
+                    case "StarRatings":
+                        await context.sendActivity({ attachments: [this.SendStarRatingsCard()] });
+                        break;
+
+                    case "ConditionalCard":
+                        await context.sendActivity({ attachments: [this.SendConditionalCard()] });
+                        break;
+
+                    case "ScrollableContainer":
+                        await context.sendActivity({ attachments: [this.SendScrollableCard()] });
+                        break;
+
+                    case "CompoundButton":
+                        await context.sendActivity({ attachments: [this.SendCompoundButtonCard()] });
+                        break;
+
+                    case "ContainerLayout":
+                        await context.sendActivity({ attachments: [this.SendContainerLayoutCard()] });
+                        break;
+
+                    case "DonutChart":
+                        await context.sendActivity({ attachments: [this.SendDonutChartCard()] });
+                        break;
+
+                    case "GaugeChart":
+                        await context.sendActivity({ attachments: [this.SendGaugeChartCard()] });
+                        break;
+
+                    case "HorizontalChart":
+                        await context.sendActivity({ attachments: [this.SendHorizontalBarChartCard()] });
+                        break;
+
+                    case "HorizontalChartStacked":
+                        await context.sendActivity({ attachments: [this.SendHorizontalBarStackedChartCard()] });
+                        break;
+                    
+                    case "LineChart":
+                        await context.sendActivity({ attachments: [this.SendLineChartCard()] });
+                        break;
+
+                    case "PieChart":
+                        await context.sendActivity({ attachments: [this.SendPieChartCard()] });
+                        break;
+                    
+                    case "VerticalBarChart":
+                        await context.sendActivity({ attachments: [this.SendVerticalBarChartCard()] });
+                        break;
+
+                    case "VerticalBarGroupedChart":
+                        await context.sendActivity({ attachments: [this.SendVerticalBarGroupedChartCard()] });
+                        break;
                 }
 
                 await context.sendActivity(`You have Selected <b>${text}</b>`);
             }
+            else if (context.activity.value != null && context.activity.text == undefined) {
+
+                const activityValue = context.activity.value;
+               
+                // Star ratings in Adaptive Cards
+                if (activityValue.hasOwnProperty('rating1') && activityValue.hasOwnProperty('rating2')) 
+                {
+                    await context.sendActivity(`Ratings Feedback: ${JSON.stringify(activityValue)}`);
+                }
+            }
 
             // After the bot has responded send the fromat Cards.
-            await this.sendAdaptiveCardFromats(context);
+            await this.sendAdaptiveCardFormats(context);
 
             // By calling next() you ensure that the next BotHandler is run.
             await next();
@@ -98,7 +203,7 @@ class BotFormattingCards extends ActivityHandler {
                 await turnContext.sendActivity(welcomeMessage);
 
                 //send the adaptive card formats.
-                await this.sendAdaptiveCardFromats(turnContext);
+                await this.sendAdaptiveCardFormats(turnContext);
             }
         }
     }
@@ -108,6 +213,17 @@ class BotFormattingCards extends ActivityHandler {
     */
     sendMentionSupportCard() {
         return CardFactory.adaptiveCard(MentionSupport);
+    }
+
+    sendCodeBlock() {
+        return CardFactory.adaptiveCard(CodeBlocksCard);
+    }
+
+    /**
+    * Adaptive Card updated to be responsive using targetWidth.
+    */
+    sendLayoutCard() {
+        return CardFactory.adaptiveCard(AdaptiveCardResponsiveLayout);
     }
 
     /**
@@ -168,11 +284,132 @@ class BotFormattingCards extends ActivityHandler {
         return CardFactory.adaptiveCard(PeoplePersonaCardSetIcon);
     }
 
+     /**
+    * Sends Card showing the use of Borders on columns, columnsets, containers, etc.,
+    */
+    sendBordersCard() {
+        return CardFactory.adaptiveCard(AdaptiveCardBorders);
+    }
+
+     /**
+    Sends Card showing the use of Rounded Corners on columns, columnsets, containers, tables, etc.,
+    */
+    sendRoundedCornersCard() {
+        return CardFactory.adaptiveCard(AdaptiveCardRoundedCorners);
+    }
+
+     /**
+    Generates an Adaptive Card attachment that includes Fluent icons. 
+    This method reads the adaptive card JSON from a resource file and deserializes it to be included as an attachment with Fluent icons in the card.
+    Fluent icons provide a modern and visually appealing way to enhance the UI within Adaptive Cards.
+    */
+    SendFluentIconsCard() {
+        return CardFactory.adaptiveCard(adaptiveCardFluentIcons);
+    }
+
     /**
-   * Send AdaptiveCard Fromats to the user.
+     Creates and returns an Attachment containing an adaptive card with media elements.
+    */
+    SendMediaElementsCard() {
+        return CardFactory.adaptiveCard(adaptiveCardMediaElements);
+    }
+
+    /**
+     Sends a star ratings card as an attachment for displaying or collecting user feedback.
+    */
+     SendStarRatingsCard() {
+        return CardFactory.adaptiveCard(adaptiveCardStarRatings);
+    }
+
+    /**
+     Sends a Conditional Action.submit button enable card
+    */
+     SendConditionalCard() {
+        return CardFactory.adaptiveCard(adaptiveCardConditional);
+    }
+
+    /**
+     Sends a Scrollable container adaptive card
+    */
+     SendScrollableCard() {
+        return CardFactory.adaptiveCard(adaptiveCardScrollable);
+    }
+
+    /**
+     Sends a Compound Button adaptive card
+    */
+     SendCompoundButtonCard() {
+        return CardFactory.adaptiveCard(adaptiveCardCompoundButton);
+    }
+
+    /**
+     Sends a Container Layout adaptive card
+    */
+     SendContainerLayoutCard() {
+        return CardFactory.adaptiveCard(adaptiveCardContainerLayouts);
+    }
+
+    /**
+     Sends a Donut Chart adaptive card
+    */
+     SendDonutChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardDonutChart);
+    }
+
+    /**
+     Sends a Gauge Chart adaptive card
+    */
+     SendGaugeChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardGaugeChart);
+    }
+
+    /**
+     Sends a Horizontal Bar Chart adaptive card
+    */
+     SendHorizontalBarChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardHorizontalBarChart);
+    }
+
+    /**
+     Sends a Horizontal Bar Stacked Chart adaptive card
+    */
+     SendHorizontalBarStackedChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardHorizontalBarStackedChart);
+    }
+
+    /**
+     Sends a Line Chart adaptive card
+    */
+     SendLineChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardLineChart);
+    }
+
+    /**
+     Sends a Pie Chart adaptive card
+    */
+     SendPieChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardPieChart);
+    }
+
+    /**
+     Sends a Vertical Bar Chart adaptive card
+    */
+     SendVerticalBarChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardVerticalBarChart);
+    }
+
+    /**
+     Sends a Vertical Bar Grouped Chart adaptive card
+    */
+     SendVerticalBarGroupedChartCard() {
+        return CardFactory.adaptiveCard(adaptiveCardVerticalBarGroupedChart);
+    }
+
+    /**
+   * Send AdaptiveCard Formats to the user.
    * @param {TurnContext} turnContext A TurnContext instance containing all the data needed for processing this conversation turn.
    */
-    async sendAdaptiveCardFromats(turnContext) {
+    async sendAdaptiveCardFormats(turnContext) {
         const cardActions = [
             {
                 type: ActionTypes.ImBack,
@@ -221,15 +458,115 @@ class BotFormattingCards extends ActivityHandler {
             },
             {
                 type: ActionTypes.ImBack,
-                title: '',
-                value: ''
+                title: 'CodeBlock',
+                value: 'CodeBlock'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'Layout',
+                value: 'Layout'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'Borders',
+                value: 'Borders'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'RoundedCorners',
+                value: 'RoundedCorners'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'FluentIcons',
+                value: 'FluentIcons'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'MediaElements',
+                value: 'MediaElements'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'StarRatings',
+                value: 'StarRatings'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'ConditionalCard',
+                value: 'ConditionalCard'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'ScrollableContainer',
+                value: 'ScrollableContainer'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'CompoundButton',
+                value: 'CompoundButton'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'ContainerLayout',
+                value: 'ContainerLayout'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'DonutChart',
+                value: 'DonutChart'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'GaugeChart',
+                value: 'GaugeChart'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'HorizontalChart',
+                value: 'HorizontalChart'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'HorizontalChartStacked',
+                value: 'HorizontalChartStacked'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'LineChart',
+                value: 'LineChart'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'PieChart',
+                value: 'PieChart'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'VerticalBarChart',
+                value: 'VerticalBarChart'
+            },
+            {
+                type: ActionTypes.ImBack,
+                title: 'VerticalBarGroupedChart',
+                value: 'VerticalBarGroupedChart'
             }
         ];
 
-        var reply = MessageFactory.text("Please select a card from given options. ");
-        reply.suggestedActions = { "actions": cardActions, "to": [turnContext.activity.from.id] };
+        await this.sendWelcomeCard(turnContext, cardActions);
+    }
 
-        await turnContext.sendActivity(reply);
+    async sendWelcomeCard(context, cardActions) {
+        const initialValue = {
+            count: 0
+        };
+        const card = CardFactory.heroCard(
+            'Please select a card from given options. ',
+            '',
+            null,
+            cardActions
+        );
+        await context.sendActivity(MessageFactory.attachment(card));
     }
 }
 
