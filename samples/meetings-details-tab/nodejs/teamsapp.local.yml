@@ -24,7 +24,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: meetings-details-tab-${{TEAMSFX_ENV}}
+      name: meetings-details-tab${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -85,20 +85,12 @@ deploy:
   - uses: cli/runNpmCommand
     with:
       args: install --no-audit
-
-  # Generate runtime environment variables For Front End
-  - uses: file/createOrUpdateEnvironmentFile
-    with:
-      target: ./client/.env
-      envs:
-        PORT: 3978
-        
+  
   # Generate runtime environment variables For Back End
   - uses: file/createOrUpdateEnvironmentFile
     with:
       target: ./.env
       envs:
-        MicrosoftAppId: ${{AAD_APP_CLIENT_ID}}
-        MicrosoftAppPassword: ${{SECRET_AAD_APP_CLIENT_SECRET}}
-        MicrosoftAppType: ${{MICROSOFT_APP_TYPE}}
-        MicrosoftAppTenantId: ${{MICROSOFT_APP_TENANT_ID}}
+        BotId: ${{AAD_APP_CLIENT_ID}}
+        BotPassword: ${{SECRET_AAD_APP_CLIENT_SECRET}}
+        BaseUrl: ${{BOT_ENDPOINT}}

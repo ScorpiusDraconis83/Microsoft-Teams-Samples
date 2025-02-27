@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Microsoft Teams sample which displays deeplinks for call, video, chat, navigate to app and navigate within tab pages which are supported for tab and bot.
+description: This Teams sample application illustrates how to use deeplinks for initiating calls, video chats, and navigating within various app tabs. It includes detailed setup instructions and supports interactions with bots and tabs to enhance user experience.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-deeplink-nodejs
 
 # DeepLink
 
-Microsoft Teams sample which displays deeplinks for call, video, chat, navigate to app and navigate within tab pages which are supported for tab and bot.[DeepLink](https://learn.microsoft.com/microsoftteams/platform/concepts/build-and-test/deep-links)
+Explore this Microsoft Teams sample app designed to demonstrate the use of deeplinks for seamless interactions, including calls, chats, and navigation across tabs and applications. Featuring bot integration and comprehensive setup guidance, this app empowers developers to create engaging and efficient communication experiences within Teams.[DeepLink](https://learn.microsoft.com/microsoftteams/platform/concepts/build-and-test/deep-links)
 
  ## Included Features
 * Tabs
@@ -48,7 +48,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Setup.
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal. 
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal. 
     
 2. Setup for Bot
 - In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp%2Caadv2).
@@ -77,6 +77,12 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     git clone https://github.com/OfficeDev/Microsoft-Teams-Samples.git
     ```
   - Update the `.env` configuration for the bot to use the `YOUR-MICROSOFT-APP-ID`, `YOUR-MICROSOFT-APP-PASSWORD` and `BASE-URL` is tunnel url eg. 124.ngrok-free.app. (Note the MicrosoftAppId is the AppId created in step 1 (Setup for Bot), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
+
+  - navigate to `Deeplink.html` page at line number `58` Update the `data-app-id` attribute with your application id.
+    
+    ```bash
+    data-app-id="{{Your-App-Id}}"
+    ```
 
     - In a terminal, navigate to `samples/tab-deeplink/nodejs`
 
@@ -150,42 +156,52 @@ Enter text in the emulator.  The text will be echoed back by the bot.
 
 `@mention` bot in meeting chat to get an adaptive card.
 
-![Bot-Adaptive-Card](DeepLinkBot/images/BotAdaptiveCard.png)
+![Bot-Adaptive-Card](Images/BotAdaptiveCard.png)
 
 Click on `Side Panel Deeplink` which will redirect to the meeting side panel.
 **Note:** When the deeplink is opened outside meeting, it will redirect to meeting details tab.
-![Meeting-Sidepanel](DeepLinkBot/images/Sidepanel.PNG)
+![Meeting-Sidepanel](Images/Sidepanel.PNG)
 
 
 **Tab interaction:**
    
 **Deeplink to Audio Call:**
 
-![Audio-Deeplink](images/AudioCall.png)
+![Audio-Deeplink](Images/AudioCall.png)
 
 **Deeplink to Video Call:**
    
-![Video-Deeplink](images/VideoCall.png)
+![Video-Deeplink](Images/VideoCall.png)
 
 **Deeplink to Meeting schedule:**
    
-![Meeting-Schedule](images/MeetingSchedule.png)
+![Meeting-Schedule](Images/MeetingSchedule.png)
 
 **Deeplink to Polly app install dialog:**
    
-![App-Install-Dialog](images/AppInstall.png)
+![App-Install-Dialog](Images/AppInstall.png)
 
 **Deeplink to start new chat:**
    
-![Start-New-Chat](images/StartChatDeeplink.png)
+![Start-New-Chat](Images/StartChatDeeplink.png)
 
-![New-Chat](images/StartNewChat.png)
+![New-Chat](Images/StartNewChat.png)
 
 **Deeplink to channel conversation:**
    
-![Show-Channel-Conversation ](images/GroupChatDeeplink.png)
+![Show-Channel-Conversation ](Images/GroupChatDeeplink.png)
    
-![channel-Conversation](images/GroupChat.png)
+![channel-Conversation](Images/GroupChat.png)
+
+**Share To Teams Web Apps:**
+
+![Teams Button](Images/ShareToTeamWebApps.png)
+
+![Present Now Feature](Images/PresentNow_Button.png)
+   
+![OpensInNewBrowser](Images/ShareToTeams_UseWebApp.png)
+
+![SharedFromWebApp](Images/ShareToTeams_LinkSharedFromWebApp.png)
 
 ## Outlook on the web
 
@@ -222,6 +238,8 @@ Click on `Side Panel Deeplink` which will redirect to the meeting side panel.
  ## Further reading
 
 - [Extend Teams apps across Microsoft 365](https://learn.microsoft.com/en-us/microsoftteams/platform/m365-apps/overview)
+
+- [Share to teams web apps](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/share-to-teams-from-web-apps?branch=pr-en-us-10824&tabs=method1)
 
 
 

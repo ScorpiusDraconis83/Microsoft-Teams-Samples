@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is an sample application which showcases action based messaging extension.
+description: This sample demonstrates how to create Action-Based Messaging Extensions for Microsoft Teams, enabling users to interactively generate content. It features bots, message extensions, and seamless integration with user inputs for enhanced functionality.
 products:
 - office-teams
 - office
@@ -14,7 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-msgext-action-nodejs
 ---
 
 # Teams Messaging Extensions Action
-Bot Framework v4 Conversation Bot sample for Teams.
+Explore the capabilities of Action-Based Messaging Extensions in Microsoft Teams with this sample app. It showcases how to implement interactive features, including bots and message extensions, allowing users to create content dynamically through a user-friendly interface.
 
 This bot has been created using [Bot Framework](https://dev.botframework.com). This sample shows
 how to incorporate basic conversational flow into a Teams application. It also illustrates a few of the Teams specific calls you can make from your bot.
@@ -71,7 +71,7 @@ the Teams service needs to call into the bot.
 ## Setup for bot
 In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     
    In the new Azure Bot resource in the Portal, 
@@ -120,22 +120,26 @@ In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/
 
 1) Selecting the **Create Card** command from the Compose Box command list. The parameters dialog will be displayed and can be submitted to initiate the card creation within the Messaging Extension code.
 
-![ME-Card ](Images/CreateAdaptiveCard.png)
+![Install](Images/1.Install.png)
 
-![ME-Card-in-chat ](Images/CardInComposeBox.png)
+![ME-Card ](Images/2.SelectActionMessageExtension.png)
 
-![ME-Posted-Card ](Images/CardPreview.png)
+![ME-Card ](Images/2.CreateCard.png)
+
+![ME-Posted-Card ](Images/3.SendCard.png)
 
 
 2) Selecting the **Fetch Roster** command from the Compose Box command list. You will presented with prompt for Just In Time installation if app is not already added to current team/chat.
 
-![Roster-Fetch ](Images/FetchRoster.png)
+![Roster-Fetch ](Images/4.FetchRoaster.png)
 
 3) You can try with other supported commands as well like: **Adaptive Card**, **Web View**, **HTML**, **Razor View**
 
-![Static-Tab ](Images/StaticPage.png)
+![Static-Tab ](Images/7.StaticHtml.png)
 
-![Web-View ](Images/WebView.png)
+![Web-View ](Images/5.EnterDetailsCard_WebView.png)
+
+![Web-View ](Images/6.SendEmpDetails.png)
 
 ## Deploy the bot to Azure
 

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Demonstrating the feature of typeahead search (static and dynamic) control in Adaptive Cards sent using bot.
+description: Demonstrating the feature of typeahead search (static, dynamic and dependant) control in Adaptive Cards sent using bot.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-type-ahead-search-adaptive-ca
 
 # Typeahead search control in Adaptive Cards Node.js
 
-This sample shows the feature of typeahead search (static and dynamic) control in Adaptive Cards.
+This sample shows the feature of typeahead search (static, dynamic and dependant) control in Adaptive Cards.
 
 ## Included Features
 * Bots
@@ -51,7 +51,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Setup
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
 2. Setup for Bot
 - In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp%2Caadv2).
@@ -110,21 +110,38 @@ Use the bot command `staticsearch` to get the card with static typeahead search 
 
  `Static search:` Static typeahead search allows users to search from values specified within `input.choiceset` in the Adaptive Card payload.
 
-![1](Images/welcomecard.png)
+![1](Images/1.Install.png)
 
-![2](Images/staticSearchCard.png)
+![2](Images/2.Welcome.png)
 
-![3](Images/staticSearchResult.png)
+![3](Images/3.StaticSearch.png)
+
+![4](Images/4.StaticSearch2.png)
+
+![5](Images/5.SelectedOption.png)
 
 `Dynamic search:` Dynamic typeahead search is useful to search and select data from large data sets. The data sets are loaded dynamically from the dataset specified in the card payload.
 
-![4](Images/dynamicSearchCard.png)
+![6](Images/6.DynamicSearch.png)
 
-![5](Images/DynamicSearchOption.png)
+![7](Images/7.DynamicSearch2.png)
 
-![6](Images/DynamicSerachResult.png)
+![8](Images/8.SelectedDynamicSearch.png)
 
 On `Submit` button click, the bot will return the choice that we have selected.
+
+`Dependant Dropdown search:`
+ Dependant typeahead search allows users to select data based on one of the dropdown. If the data of the main dropdown changes the data of the dependant dropdown changes with it. The data sets are loaded dynamically from the dataset specified in the card payload.
+
+![dependant dropdown search card](TypeaheadSearch/Images/9.DependantDropdown.png)
+
+![dependant dropdown search Countries](TypeaheadSearch/Images/10.CountryOptions.png)
+
+![dependant dropdown search cities](TypeaheadSearch/Images/11.CitiesAsPerTheCountry.png)
+
+`On `Submit` button click, the bot will return the choice that we have selected:`
+
+![dependant dropdown results](TypeaheadSearch/Images/12.SelectedDependantDropdown.png)
 
 ## Deploy the bot to Azure
 

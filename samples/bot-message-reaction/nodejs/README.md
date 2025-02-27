@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample showcases feature on how to capture reaction events when reactions are passed to the bot through personal/teams messages.
+description: This sample app demonstrates how to use message reactions in Microsoft Teams with a bot built on the Bot Framework.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-message-reaction-nodejs
 
 # Teams Message Reactions Bot Node.js Sample
 
-Message the bot and it will respond with an 'Echo: [your message]'.  Add a message reaction to the bot's response, and the bot will reply accordingly.
+This sample app demonstrates the implementation of message reactions in Microsoft Teams using the Bot Framework. The bot responds dynamically to reactions, supporting personal, group, and team scopes, and is compatible with adaptive cards. It can be run locally with .NET SDK and tunneling solutions or deployed to Azure for broader use.
 
 ## Included Features
 * Bots
@@ -69,7 +69,7 @@ the Teams service needs to call into the bot.
 ## Setup for bot
 In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     
    In the new Azure Bot resource in the Portal, 
@@ -113,23 +113,25 @@ In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/
 
 Message the bot and it will respond with an 'Echo: [your message]'.  Add a message reaction to the bots response, and the bot will reply accordingly.
 
+- **App Installation:**
+
+![App Installation ](Images/1.Install.png)
+
 - **Personal Scope Interactions:**
 
-![personalScope-AddApp ](Images/personalScope-AddApp.png)
-
-![personalScope-Interaction ](Images/personalScope-Interaction.png)
+![personalScope-AddApp ](Images/2.PersonalChat.png)
 
 - **Group Chat Scope Interactions:**
 
-![groupChat-AddApp ](Images/groupChat-AddApp.png)
+![groupChat-AddApp ](Images/5.AddToGC.png)
 
-![groupChat-Interaction ](Images/groupChat-Interaction.png)
+![groupChat-Interaction ](Images/6.GroupChat.png)
 
 - **Team Scope Interactions:**
 
-![teamScope-AddApp ](Images/teamScope-AddApp.png)
+![teamScope-AddApp ](Images/3.AddToTeams.png)
 
-![teamScope-Interaction ](Images/teamScope-Interaction.png)
+![teamScope-Interaction ](Images/4.TeamsChat.png)
 
 ## Deploy the bot to Azure
 

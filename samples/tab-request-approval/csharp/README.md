@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows a feature where requester can request for any task approval from manager and manager can see the pending request by user on the click of activity feed notification and can approve or reject the request.
+description: This sample app enables users to request task approvals through activity feed notifications, allowing managers to easily approve or reject requests.
 products:
 - office-teams
 - office
@@ -15,9 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-request-approval-csharp
 
 # Send task approvals using activity feed notification (Graph APIs)
 
-This sample shows a feature where:
-1. Requester : Can request for any task approval from manager by sending activity feed notification and can see his request status.
-2. Manager : Can see the pending approval request raised by user on the click of activity feed notification and can approve or reject the request.
+This sample application streamlines the task approval process in Microsoft Teams, enabling users to send approval requests directly to their managers via activity feed notifications. Managers can quickly view and manage pending requests, making use of Teams SSO and Graph API to enhance productivity and collaboration in task management.
 
 ## Included Features
 * Teams SSO (tabs)
@@ -44,14 +42,27 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
 - [dev tunnel](https://learn.microsoft.com/en-us/azure/developer/dev-tunnels/get-started?tabs=windows) or [Ngrok](https://ngrok.com/download) (For local environment testing) latest version (any other tunneling software can also be used)
 
-
 - [Teams](https://teams.microsoft.com) Microsoft Teams is installed and you have an account
+
+- [Teams Toolkit for Visual Studio](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+
+## Run the app (Using Teams Toolkit for Visual Studio)
+
+The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio.
+1. Install Visual Studio 2022 **Version 17.10 Preview 4  or higher** [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+1. Install Teams Toolkit for Visual Studio [Teams Toolkit extension](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+1. In the debug dropdown menu of Visual Studio, select default startup project > **Microsoft Teams (browser)**
+1. In Visual Studio, right-click your **TeamsApp** project and **Select Teams Toolkit > Prepare Teams App Dependencies**
+1. Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps.
+1. Select **Debug > Start Debugging** or **F5** to run the menu in Visual Studio.
+1. In the browser that launches, select the **Add** button to install the app to Teams.
+> If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
 ## Setup
 
 ### Register your Teams Auth SSO with Azure AD
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -139,9 +150,8 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
    - Press `F5` to run the project
 	 
 20. Modify the `manifest.json` in the `/AppPackage` folder and replace the following details:
-   - `{MicrosoftAppId}` with Application id generated from Step 3
-   - `{Base_URL}` - Your application's base url. E.g. https://12345.ngrok-free.app if you are using ngrok and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
-   - `{{domain-name}}` with base Url domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
+   - `${{AAD_APP_CLIENT_ID}}` with Application id generated from Step 3
+   - `${{TAB_DOMAIN}}` with base Url domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
 
 21. Zip the contents of `AppPackage` folder into a `manifest.zip`, and use the `manifest.zip` to deploy in app store or add to Teams using step 19.
 
@@ -159,51 +169,47 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
 - Install App User-1
 
-![InstallAppUser1](TabRequestApproval/Images/1.InstallAppUser.png)
+![InstallAppUser1](TabRequestApproval/Images/1.Install_User1.png)
 
 - Create Task
 
-![CreateTask](TabRequestApproval/Images/3.CreateTask.png)
+![CreateTask](TabRequestApproval/Images/2.Create_Task.png)
 
 - Task Details
 
-![TaskDetails](TabRequestApproval/Images/4.RequestTo.png)
+![TaskDetails](TabRequestApproval/Images/3.Task_Details.png)
 
 - All Person
 
-![TaskDetails](TabRequestApproval/Images/5.SelectPerson.png)
+![TaskDetails](TabRequestApproval/Images/5.Select_a_Person.png)
 
 - Select a Person
 
-![TaskDetails](TabRequestApproval/Images/6.SelectOnePerson.png)
+![TaskDetails](TabRequestApproval/Images/6.Install_User2.png)
 
 - Create task Details
 
-![CreateTaskDetails](TabRequestApproval/Images/7.CreateTaskDetails.png)
+![CreateTaskDetails](TabRequestApproval/Images/7.Create_Task_User2.png)
 
 - Install App User-2
 
-![InstallAppUser2](TabRequestApproval/Images/2.InstallAppUser.png)
+![InstallAppUser2](TabRequestApproval/Images/8.Send_Request.png)
 
 - Send Request
 
-![SendRequest](TabRequestApproval/Images/12.SendReq.png)
+![SendRequest](TabRequestApproval/Images/9.Request_Popup_User2.png)
 
-- On click of notification a task module will open, redirecting the user to the request.
+- On click of notification a dialog (referred as task modules in TeamsJS v1.x) will open, redirecting the user to the request.
 
-![SendRequest](TabRequestApproval/Images/8.Activity.png)
+![SendRequest](TabRequestApproval/Images/10.Requests_User1.png)
 
 - User-1 My Request 
 
-![SendRequest](TabRequestApproval/Images/9.User1MyRequestDetails.png)
+![SendRequest](TabRequestApproval/Images/11.Pending_Approvals_User2.png)
 
 - User-2 My Pending Approvals 
 
-![SendRequest](TabRequestApproval/Images/10.User2PendingRequestDetails.png)
-
-- User-1 Approved Status
-
-![SendRequest](TabRequestApproval/Images/11.ApprovedReq.png)
+![SendRequest](TabRequestApproval/Images/12.Approved_Status_User1.png)
 
 ## Further reading
 

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample which demonstrates sending different types cards supported in teams using bot.
+description: This sample demonstrates using a bot to send multiple card types in Microsoft Teams, including Adaptive, Hero, Thumbnail, and OAuth cards. It covers setup, deployment, and app installation instructions.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-all-cards-nodejs
 ---
 # Types of Cards
 
-This sample shows the feature where user can send different types of cards using bot.
+This Microsoft Teams bot sample demonstrates sending various card types, such as Adaptive, Hero, List, and Thumbnail cards. It includes detailed steps for setup, app deployment, and using Teams Toolkit for Visual Studio to run the app. Experience this versatile bot directly within your Teams client, complete with a manifest for easy sideloading.
 
 ## Included Features
 * Bots
@@ -63,7 +63,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## App Registrations
 
-1) Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1) Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2) Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -116,7 +116,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
   - In a terminal, navigate to `samples/bot-all-cards/nodejs`
 
-  - Update the `.env` configuration file for the bot to use the `{{Microsoft-App-Id}}`, `{{Microsoft-App-Password}}` and `{{ConnectionName}}`.  (Note the MicrosoftAppId is the AppId created in step 1 (Setup AAD app registration in your Azure portal), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
+  - Update the `.env` configuration file for the bot to use the `{{Microsoft-App-Id}}`, `{{Microsoft-App-Password}}` and `{{ConnectionName}}`.  (Note the MicrosoftAppId is the AppId created in step 1 (Setup Microsoft Entra ID app registration in your Azure portal), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot) and you can always create a new client secret anytime.)
 
   - Install modules
 
@@ -148,43 +148,43 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 **Install App:**
 
-![InstallApp](Images/1.AddApp.png)
+![InstallApp](Images/1.Install.png)
 
 **Welcome Message:**
 
-![Initial message](Images/1.Welcome.png)
+![Initial message](Images/2.Welcome.png)
 
 **Adaptive Card:**
 
-![Adaptive Card](Images/2.AdaptiveCard.png)
+![Adaptive Card](Images/3.AdaptiveCard.png)
 
 **Hero Card:**
 
-![Hero Card](Images/3.HeroCard.png)
+![Hero Card](Images/4.HeroCard.png)
 
 **List Card:**
 
-![List Card](Images/4.ListCard.png)
+![List Card](Images/5.ListCard.png)
 
 **Office365 Card:**
 
-![Office365 Connector Card](Images/5.Office365ConnectorCard.png)
+![Office365 Connector Card](Images/6.Office365Card.png)
 
 **SignIn Card:**
 
-![SignIn Card](Images/6.SignIncard.png)
+![SignIn Card](Images/8.SignInCard.png)
 
 **Thumbnail Card:**
 
-![Thumbnail Card](Images/7.ThumbnailCard.png)
+![Thumbnail Card](Images/9.ThumbnailCard.png)
 
 **Collection Card:**
 
-![Collection Card](Images/8.CollectionCard.png)
+![Collection Card](Images/7.CollectionCard.png)
 
 **Oauth Card:**
 
-![Oauth Card](Images/9.OathCard.png)
+![Oauth Card](Images/8.SignInCard.png)
 
 ## Deploy the bot to Azure
 

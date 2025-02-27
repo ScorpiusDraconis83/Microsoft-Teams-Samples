@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: "This is an sample tab application which shows the contents of tab context object in a private and shared channel."
+description: "This sample illustrates the capabilities of a tab application that shows the tab context object specifically for private and shared channels in Microsoft Teams. Users can expand and copy JSON slices from the context object, providing valuable insights based on the channel type."
 products:
 - office-teams
 - office
@@ -22,7 +22,8 @@ urlFragment: officedev-microsoft-teams-samples-tab-channel-context-nodejs
 - [Teams Toolkit for VS Code](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) or [TeamsFx CLI](https://learn.microsoft.com/microsoftteams/platform/toolkit/teamsfx-cli?pivots=version-one)
 
 # Tab context in channel
-This sample shows the contents of tab context object in a private and shared channel.
+
+Explore a sample Microsoft Teams tab application that reveals the contents of the tab context object in both private and shared channels. Designed with Node.js, this application allows users to interact with and manipulate the context object, offering features like JSON expansion and copying for enhanced usability in collaborative environments.
 
 ## Included Features
 * Tabs
@@ -42,7 +43,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Interaction with app
 
-![Preview Image](Images/Preview.gif)
+![PreviewImage](Images/Preview.gif)
 
 ## Setup
 
@@ -95,13 +96,25 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
  **NOTE:** Only accounts with admin access can create private/shared channels in team.
 
 # Running the sample
-1) Configure in Private channel
+1) Configure in Regular channel
 
-![tab context in private channel](Images/privateChannel.png)
+![image1](Images/image1.png)
 
-2) Configure in Public channel
+![image2](Images/image2.png)
 
-![tab context in private channel](Images/regularChannel.png)
+![image3](Images/image3.png)
+
+![image4](Images/image4.png)
+
+2) Configure in Private channel
+
+![image5](Images/image5.png)
+
+![image6](Images/image6.png)
+
+![image7](Images/image7.png)
+
+![image8](Images/image8.png)
 
 **Features of the sample**
 

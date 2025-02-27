@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample personal tab quick-start app.
+description: This quick-start sample provides detailed instructions for developing a personal tab in Microsoft Teams with TypeScript, featuring essential setup and deployment guidance.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-personal-quickstart-ts
 
 # Personal Tabs
 
-Tabs are Teams-aware webpages embedded in Microsoft Teams. A channel/group tab delivers content to channels and group chats, and are a great way to create collaborative spaces around dedicated web-based content.
+This sample application serves as a comprehensive guide for creating a personal tab in Microsoft Teams using TypeScript. It includes step-by-step instructions on setting up your development environment, configuring the app manifest, and deploying your tab across Teams, Outlook, and Office, empowering developers to easily implement and test their custom solutions.
 
  ## Included Features
 * Tabs
@@ -50,7 +50,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Setup
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
    - Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)

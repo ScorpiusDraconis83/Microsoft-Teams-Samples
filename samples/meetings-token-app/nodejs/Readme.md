@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Microsoft Teams meeting extensibility sample - token passing
+description: The Meeting Token Generator app allows participants to request and manage tokens for equitable interaction during Teams meetings.
 products:
 - office-teams
 - office
@@ -15,9 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-meetings-token-app-nodejs
 
 # Meeting Token Generator
 
-The Meeting Token Generator app is a sample Microsoft Teams app that extends meetings in Teams.
-Through this app, meeting participants can request a "token", which is generated sequentially so that each participant has a fair opportunity to interact. This can be useful in situations like scrum meetings, Q&A sessions, etc.
-This application also shows the implementation of Live Share SDK to update the data in real-time for all participants in meeting.
+The Meeting Token Generator is a sample application designed to extend Microsoft Teams meetings by enabling participants to request interaction tokens. This app utilizes the Live Share SDK for real-time updates and includes features like meeting chat and a side panel for enhanced collaboration. The demo manifest is available for testing in your Microsoft Teams client..
 
 - [Live-share-sdk-overview](https://docs.microsoft.com/microsoftteams/platform/apps-in-teams-meetings/teams-live-share-overview)
 - [Build tabs for meeting](https://learn.microsoft.com/microsoftteams/platform/apps-in-teams-meetings/build-tabs-for-meeting?tabs=desktop)
@@ -101,7 +99,7 @@ The app uses the Teams extensibility features described on the following pages:
 1. Start an ngrok session as indicated above. Note the ngrok domain, as you will use this in the registration steps below, where it will be the value of `WebAppDomain`.
 2. Register your bot with Azure Bot Service, following the instructions [here](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration?view=azure-bot-service-3.0).
 - Ensure that you've [enabled the Teams Channel](https://docs.microsoft.com/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
-3. Update the AAD app registration for tab SSO, following the  instructions [here](Wiki/auth-aad-sso.md). The "fully qualified domain name" in the instructions will be your ngrok domain.
+3. Update the Microsoft Entra ID app registration for tab SSO, following the  instructions [here](Wiki/auth-aad-sso.md). The "fully qualified domain name" in the instructions will be your ngrok domain.
 4. Set up the .env with the following keys:
     - `"BotId"` : Application (Bot) ID of the bot's Azure AD application
     - `"BotPassword"` : client secret of the bot's Azure AD application

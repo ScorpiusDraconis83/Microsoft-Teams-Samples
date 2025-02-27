@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows a feature where user can schedule a recurring task and get the reminder at scheduled time using bot.
+description: This Teams bot helps users schedule recurring tasks and receive reminders at specified times. It supports adaptive cards and task modules, utilizing the Quartz Scheduler to manage reminders.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-daily-task-reminder-nodejs
 
 # Bot task reminder
 
-This sample shows a feature where user can schedule a recurring task and get the reminder at scheduled time using bot.
+The Daily Task Reminder bot for Microsoft Teams enables users to schedule recurring tasks and receive reminders at designated times. Built with the Bot Framework and leveraging adaptive cards and task modules, this bot provides an efficient way to manage and be reminded of daily tasks directly within Teams. It includes setup instructions for Microsoft Entra ID, Teams integration, and Azure Bot Service, offering seamless scheduling and notification capabilities.
 
 ## Included Features
 * Bots
@@ -62,7 +62,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > the Teams service needs to call into the bot.
 
 1) Setup for Bot
-- In Azure portal, create AAD app registraion and it will generate MicrosoftAppId and MicrosoftAppPassword for you.
+- In Azure portal, create Microsoft Entra ID app registraion and it will generate MicrosoftAppId and MicrosoftAppPassword for you.
 - In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-builder-authentication?view=azure-bot-service-4.0&tabs=csharp%2Caadv2).
 
 - Ensure that you've [enabled the Teams Channel](https://docs.microsoft.com/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
@@ -100,7 +100,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     npm install
     ```
 
-- Update the `.env` configuration file in your project folder for the bot to use the `MicrosoftAppId`, `MicrosoftAppPassword` (Note the MicrosoftAppId is the AppId created while doing AAD app registration in Azure portal, the MicrosoftAppPassword is referred to as the "client secret" generated while creating Secret in AAD app registration.
+- Update the `.env` configuration file in your project folder for the bot to use the `MicrosoftAppId`, `MicrosoftAppPassword` (Note the MicrosoftAppId is the AppId created while doing Microsoft Entra ID app registration in Azure portal, the MicrosoftAppPassword is referred to as the "client secret" generated while creating Secret in Microsoft Entra ID app registration.
  `BaseUrl` with application base url. For e.g., your ngrok url https://xxx.ngrok-free.app and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
 
 - Run your app

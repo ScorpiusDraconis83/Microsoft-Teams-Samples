@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows the feature of bot configuration and reconfiguration for bots in team and group chat.
+description: This sample demonstrates a bot for configuring and reconfiguring adaptive cards in team and group chats.
 products:
 - office-teams
 - office
@@ -14,9 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-configuration-app-nodejs
 ---
 # Bot Configuration 
 
-This sample demonstrates the features of bot configuration and reconfiguration for both teams and group chats, including a type-ahead search (static and dynamic) control on Adaptive Cards.
-
-To get a configurable card with a static typeahead search control, add the bot to a Teams or group chat scope. Upon submission, the card will be updated to include a dynamic typeahead search control.
+This sample demonstrates a bot for configuring and reconfiguring adaptive cards in team and group chats. It supports static and dynamic type-ahead search, allowing for enhanced interactivity and control customization.
 
 ## Included Features
 * Bots
@@ -70,7 +68,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 ## Setup for bot
 In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     
    In the new Azure Bot resource in the Portal, 
@@ -125,7 +123,8 @@ You can interact with this bot in Teams by sending it a message, or selecting a 
    **Added bot UI:**
   ![groupChat-AddedBot ](Images/groupChat-AddedBot.png)
 
-   **Show configurable card interaction:**
+   - **Show configurable card interaction:**
+
   ![configurable-card-Interaction1 ](Images/configurable-card-Interaction1.png)
 
   ![configurable-card-Interaction2 ](Images/configurable-card-Interaction2.png)
@@ -134,20 +133,8 @@ You can interact with this bot in Teams by sending it a message, or selecting a 
     
   ![configurable-card-Interaction4 ](Images/configurable-card-Interaction4.png)
 
-   - **Bot description card Interactions:**
 
-   **Bot Descrption Card:**
-   **Hover over the bot and a adaptive Card appears**
-  ![Bot-description-card](Images/Bot-description-card.png)
 
-   **Click the settings button in the card to invoke configurable card:**
-  ![Bot-description-card-interaction1](Images/Bot-description-card-interaction1.png)
-
-  ![Bot-description-card-interaction2](Images/Bot-description-card-interaction2.png)
-
-  ![Bot-description-card-interaction3](Images/Bot-description-card-interaction3.png)
-
-  ![Bot-description-card-interaction4](Images/Bot-description-card-interaction4.png)
 
 ## Deploy to Azure
 

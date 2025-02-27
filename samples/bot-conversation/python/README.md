@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample app demonstrates use of different bot conversation events available in bot framework v4 for personal and teams scope.
+description: This app demonstrates using bot conversation events in Microsoft Teams, supporting adaptive cards, read receipts, and message update events. It includes immersive reader support for enhanced accessibility.
 products:
 - office-teams
 - office
@@ -15,6 +15,8 @@ urlFragment: officedev-microsoft-teams-samples-bot-conversation-python
 ---
 
 # Teams Conversation Bot
+
+This sample app demonstrates how to handle various bot conversation events in Microsoft Teams, including read receipts and adaptive card interactions. It showcases capabilities such as immersive reader support and message update tracking, making it ideal for personal, group, and team chat scopes.
 
 Bot Framework v4 Conversation Bot sample for Teams ([Messages in bot conversations](https://learn.microsoft.com/microsoftteams/platform/bots/how-to/conversations/conversation-messages?tabs=dotnet)).
 
@@ -118,16 +120,16 @@ You can select an option from the command list by typing ```@TeamsConversationBo
 ## Running the sample
 
 The bot initialization message
-![Message](Images/1.BotInstallationMessage.PNG)
+![Message](Images/1.prompts.png)
 
 The bot will send the welcome card for you to interact with
-![WelcomeCard](Images/2.WelcomeCard.PNG)
+![WelcomeCard](Images/2.welcome.png)
 
 The bot will respond to the message and mention the user
-![MentionMe](Images/3.MentionMe.PNG)
+![MentionMe](Images/3.mention.png)
 
 The bot initialization message
-![MessageAllMembers](Images/4.MessageAllMembers.PNG)
+![MessageAllMembers](Images/4.message-to-all.png)
 
 ## Deploy the bot to Azure
 

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Demonstrating on how a bot can receive all channel messages with RSC without @mention.
+description: This bot can capture all channel messages in Teams using RSC permissions, without the need for @mentions.
 products:
 - office-teams
 - office
@@ -15,8 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-receive-channel-messages-with
 
 # Receive Channel messages with RSC permissions
 
-Using this Node JS sample, a bot can receive all channel messages with RSC without @mention.
-For reference please check [Receive Channel messages with RSC](https://docs.microsoft.com/en-us/microsoftteams/platform/bots/how-to/conversations/channel-messages-with-rsc)
+This sample app illustrates how a bot can capture all channel messages in Microsoft Teams by utilizing RSC (resource-specific consent) permissions, eliminating the need for @mentions. The bot supports adaptive card responses, easy local testing with tools like ngrok or dev tunnels, and deployment to Azure, allowing it to function effectively across different channels and group chats in Teams.
 
 This feature shown in this sample is currently available in Public Developer Preview only.
 
@@ -27,7 +26,7 @@ This feature shown in this sample is currently available in Public Developer Pre
 
 ## Interaction with app
 
-![Bot Receive Channel MessagesWithRSCGif](images/BotWithRSCModule.gif)
+![Bot Receive Channel MessagesWithRSCGif](images/Bot_Channel_Messenging-RSC-nodejs-gif.gif)
 
 ## Try it yourself - experience the App in your Microsoft Teams client
 Please find below demo manifest which is deployed on Microsoft Azure and you can try it yourself by uploading the app package (.zip file link below) to your teams and/or as a personal app. (Sideloading must be enabled for your tenant, [see steps here](https://docs.microsoft.com/microsoftteams/platform/concepts/build-and-test/prepare-your-o365-tenant#enable-custom-teams-apps-and-turn-on-custom-app-uploading)).
@@ -106,7 +105,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     ```bash
     npm install
     ```
-- Update the `.env` configuration for the bot to use the `MicrosoftAppId` (Microsoft App Id) and `MicrosoftAppPassword` (App Password) from the AAD app registration in Azure portal or from Bot Framework registration. 
+- Update the `.env` configuration for the bot to use the `MicrosoftAppId` (Microsoft App Id) and `MicrosoftAppPassword` (App Password) from the Microsoft Entra ID app registration in Azure portal or from Bot Framework registration. 
 > NOTE: the App Password is referred to as the `client secret` in the azure portal app registration service and you can always create a new client secret anytime.
 
 - Run your app
@@ -147,23 +146,23 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 **Adding bot UI:**
 
-![App installation](images/1.RSC_Install_Scopes.png)
+![App installation](images/1.Install.png)
 
 **Hey command interaction:**
 
-![Permissions](images/2.botWithRSCFlow.png)
+![Permissions](images/3.Interaction.png)
 
 **1 or 2 command interaction:**
 
-![Permissions](images/3.Notification.png) 
+![Permissions](images/4.1_and_2_Command_Interaction.png) 
 
 **Adding App to group chat:**
 
-![Adding To Groupchat](images/4.RSC_Groupchat.png) 
+![Adding To Groupchat](images/5.Install_to_GC.png) 
 
 **Group chat interaction with bot without being @mentioned:**
 
-![Group Chat](images/5.RSC_GroupConversation.png) 
+![Group Chat](images/7.1_and_2_Command_Interaction.png) 
 
 **Interacting with the bot in Teams**
 

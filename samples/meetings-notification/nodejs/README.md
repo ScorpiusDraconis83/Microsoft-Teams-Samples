@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Microsoft Teams meeting extensibility sample for iteracting with In-meeting notifications
+description: This sample application demonstrates how to implement targeted in-meeting notifications in Microsoft Teams using adaptive cards and bot interactions.
 products:
 - office-teams
 - office
@@ -15,7 +15,8 @@ urlFragment: officedev-microsoft-teams-samples-meetings-notification-nodejs
 
 ## Targeted In-Meeting Notification
 
-This sample illustrates how to implement [Targeted In-Meeting Notification](https://learn.microsoft.com/microsoftteams/platform/apps-in-teams-meetings/meeting-apps-apis?branch=pr-en-us-7615&tabs=dotnet#targeted-meeting-notification-api)  In-Meeting Experience.
+This sample application illustrates how to implement [Targeted In-Meeting Notification](https://learn.microsoft.com/microsoftteams/platform/apps-in-teams-meetings/meeting-apps-apis?branch=pr-en-us-7615&tabs=dotnet#targeted-meeting-notification-api) within Microsoft Teams. By utilizing adaptive cards and bot interactions, it enables users to send and receive notifications, view meeting agendas, and provide feedback, fostering a more interactive and efficient meeting experience.
+
 
 ## Included Features
 * Bots
@@ -107,7 +108,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     npm install
     ```
 
-- Go to .env file in your project folder and update `MicrosoftAppId`, `MicrosoftAppPassword` with the values received from your AAD app registration.
+- Go to .env file in your project folder and update `MicrosoftAppId`, `MicrosoftAppPassword` with the values received from your Microsoft Entra ID app registration.
   - Update `BaseUrl` as per your domain like ngrok url: https://1234.ngrok-free.app 
 
 - Start the bot
@@ -118,7 +119,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
  
 4) Setup Manifest for Teams
 
-- Modify the `manifest.json` file placed in `/appManifest` folder and replace the <<APP_ID>> with your Microsoft App Id received via doing AAD app registration in your Azure Portal.
+- Modify the `manifest.json` file placed in `/appManifest` folder and replace the <<APP_ID>> with your Microsoft App Id received via doing Microsoft Entra ID app registration in your Azure Portal.
     - **Edit** the `manifest.json` for `validDomains` and replace <<Valid-Domain>> with base Url domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
     - **Zip** up the contents of the `appManifest` folder to create a `manifest.zip`
     - - **Upload** the `manifest.zip` to Teams
@@ -131,30 +132,32 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Running the sample
 
+![Install](Images/1.Install.png)
+
 Type `SendContentBubble` in bot chat to send In-Meeting notifications.
 
 **Hello command interaction:**
 
-![Meetings AgendaCard](Images/AgendaCard.png)
+![Meetings AgendaCard](Images/5.ContentBubble.png)
 
 **Provide your feedback:**
 
-![Meetings Feedback Submit](Images/FeedbackSubmit.png)
+![Meetings Feedback Submit](Images/6.ProvideFeedback.png)
 
 **Provide your feedback Yes:**
 
-![Meetings Feedback CardYes](Images/FeedbackCardYes.png)
-
-**Provide your feedback No:**
-
-![Meetings Feedback CardNo](Images/FeedbackCardNo.png)
+![Meetings Feedback CardYes](Images/7.SubmittedYes.png)
 
 ## Send targeted meeting notification
 
 Type `SendTargetedNotification` in bot chat to send Targeted Meeting notifications.
-![Meeting card](Images/MeetingCard.png)
+![Meeting card](Images/2.CardInMeeting.png)
 
-![Target notification](Images/TargetNotification.png)
+![Target notification](Images/3.TargetedNotification.png)
+
+![Target notification](Images/4.SubmitFeedback.png)
+
+![Target notification](Images/4.TargetNotificationSubmittedYes.png)
 
 **Interacting with the app in Teams Meeting**
 

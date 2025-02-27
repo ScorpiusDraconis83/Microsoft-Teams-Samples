@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample app demonstrates use of different bot conversation events available in bot framework v4 for personal and teams scope.
+description: This app demonstrates using bot conversation events in Microsoft Teams, supporting adaptive cards, read receipts, and message update events. It includes immersive reader support for enhanced accessibility.
 products:
 - office-teams
 - office
@@ -14,6 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-conversation-java
 ---
 
 # Teams Conversation Bot
+This sample app demonstrates how to handle various bot conversation events in Microsoft Teams, including read receipts and adaptive card interactions. It showcases capabilities such as immersive reader support and message update tracking, making it ideal for personal, group, and team chat scopes.
 
 Bot Framework v4 Conversation Bot sample for Teams ([Messages in bot conversations](https://learn.microsoft.com/microsoftteams/platform/bots/how-to/conversations/conversation-messages?tabs=dotnet)).
 
@@ -66,7 +67,7 @@ the Teams service needs to call into the bot.
 
    In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
 
    In the new Azure Bot resource in the Portal, 
@@ -98,17 +99,18 @@ the Teams service needs to call into the bot.
 You can interact with this bot by sending it a message, or selecting a command from the command list. The bot will respond to the following strings. 
 
 1. **Show Welcome**
-    ![WelcomeCard](Images/2.WelcomeCard.PNG)
+    ![Prompts](Images/1.prompts.png)
+    ![Welcome](Images/2.welcome.png)
   - **Result:** The bot will send the welcome card for you to interact with
   - **Valid Scopes:** personal, group chat, team chat
 
 2. **MentionMe**
-    ![MentionMe](Images/3.MentionMe.PNG)
+    ![MentionMe](Images/3.mention.png)
   - **Result:** The bot will respond to the message and mention the user
   - **Valid Scopes:** personal, group chat, team chat
 
 3. **MessageAllMembers**
-    ![MessageAllMembers](Images/4.MessageAllMembers.PNG)
+    ![MessageAllMembers](Images/4.sent.png)
   - **Result:** The bot will send a 1-on-1 message to each member in the current conversation (aka on the conversation's roster).
   - **Valid Scopes:** personal, group chat, team chat
 

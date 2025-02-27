@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample which demonstrates Azure AD authentication in teams using bot.
+description: This sample bot demonstrates implementing SSO in Microsoft Teams using Azure AD.
 products:
 - office-teams
 - office
@@ -15,13 +15,13 @@ urlFragment: officedev-microsoft-teams-samples-bot-conversation-sso-quickstart-j
 ---
 # Teams Conversation Bot SSO quick-start
 
-Teams Bot with SSO using Bot Framework v4.
+This sample demonstrates how to implement Single Sign-On (SSO) for Teams bots using Azure Active Directory and the Bot Framework. It includes comprehensive setup instructions for authentication, tunneling, and deploying to Azure, offering a streamlined way to authenticate users and access Microsoft Graph data directly within Teams.
 
 This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to get started with SSO in a bot for Microsoft Teams.
 
 The focus of this sample is how to use the Bot Framework support for OAuth SSO in your bot. Teams behaves slightly differently than other channels in this regard. Specifically an Invoke Activity is sent to the bot rather than the Event Activity used by other channels. _This Invoke Activity must be forwarded to the dialog if the OAuthPrompt is being used._ This is done by subclassing the ActivityHandler and this sample includes a reusable TeamsActivityHandler. This class is a candidate for future inclusion in the Bot Framework SDK.
 
-The sample uses the bot authentication capabilities in [Azure Bot Service](https://docs.botframework.com), providing features to make it easier to develop a bot that authenticates users to various identity providers such as Azure AD (Azure Active Directory), GitHub, Uber, etc. The OAuth token is then used to make basic Microsoft Graph queries.
+The sample uses the bot authentication capabilities in [Azure Bot Service](https://docs.botframework.com), providing features to make it easier to develop a bot that authenticates users to various identity providers such as Microsoft Entra ID, GitHub, Uber, etc. The OAuth token is then used to make basic Microsoft Graph queries.
 
 > IMPORTANT: The manifest file in this app adds "token.botframework.com" to the list of `validDomains`. This must be included in any bot that uses the Bot Framework OAuth flow.
 
@@ -98,7 +98,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     npm install
     ```
 
-- Update the `.env` configuration for the bot to use the Microsoft App Id and App Password from the step 1 (AAD app registration in Azure portal or from Bot Framework registration. (Note the MicrosoftAppId is the AppId created in step 1, the MicrosoftAppPassword is referred to as the "client secret" in step1 and you can always create a new client secret anytime.)
+- Update the `.env` configuration for the bot to use the Microsoft App Id and App Password from the step 1 (Microsoft Entra ID app registration in Azure portal or from Bot Framework registration. (Note the MicrosoftAppId is the AppId created in step 1, the MicrosoftAppPassword is referred to as the "client secret" in step1 and you can always create a new client secret anytime.)
     Also, update `connectionName` as the name of your Azure Bot connection created in step 1.
      - `MicrosoftAppType` - Set this as MultiTenant to if your bot is supported on multiple tenants, otherwise SingleTenant.
      - `MicrosoftAppTenantId` - Set your tenantId here if you are using single tenant app registration.
@@ -123,19 +123,19 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 **Adding bot UI:**
 
-![Install](sso_media/Install.png)
+![Install](sso_media/1.Install.png)
 
 **Welcome to teamsBot:**
 
-![BotSigninCard](sso_media/BotSignInCard.png)
+![Install](sso_media/2.Installed.png)
 
 **Login command interaction:**
 
-![UserDetailsCard](sso_media/UserDetailsCard.png)
+![BotSigninCard](sso_media/3.Logged_In.png)
 
 **View your token:**
 
-![Token](sso_media/Token.png)
+![UserDetailsCard](sso_media/4.Your_Token.png)
 
 You can interact with this bot by sending it a message. The bot will respond by asking for your consent, by this consent the Bot will exchange an SSO token, then making a call to the Graph API on your behalf and returning the results. It will keep you loggined unless you send a message "logout". 
 

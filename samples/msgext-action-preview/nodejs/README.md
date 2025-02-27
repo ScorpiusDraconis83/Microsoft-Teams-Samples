@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample demonstrating an Action Based Messaging Extension with Preview.
+description: This sample app illustrates how to utilize action previews in Teams Messaging Extensions, allowing users to create cards from input in a Task Module. It showcases bot interactions that enhance user engagement by attributing messages to users.
 products:
 - office-teams
 - office
@@ -15,9 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-msgext-action-preview-nodejs
 
 # Teams Messaging Extensions Action Preview
 
-Sample demonstrating an Action Based Messaging Extension with Preview
-
-Click the Messaging Extension icon in the Compose Box's Messaging Extension menu.
+Explore a sample of an action-based messaging extension for Microsoft Teams, featuring interactive previews and robust capabilities like bot interactions and message extensions. This tool enables users to engage with the bot and access actions directly from the compose box, enhancing the messaging experience.
 
 ## Included Features
 * Bots
@@ -72,7 +70,7 @@ the Teams service needs to call into the bot.
 ## Setup for bot
 In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
     
    In the new Azure Bot resource in the Portal, 

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample which demonstrates how to archive groupchat messages and send it to user as a file using bot.
+description: This sample bot archives Teams group chat messages and sends them as files to users.
 products:
 - office-teams
 - office
@@ -15,9 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-archive-groupchat-messages-no
  
 # Archive groupchat messages
 
-Using this nodejs sample, a bot can archive chat messages of groupchat and send it to user.
-
-This feature shown in this sample is currently available in Public Developer Preview only.
+This sample demonstrates a bot that archives group chat messages in Microsoft Teams and sends them to users as downloadable files. It supports Teams SSO, Adaptive Cards, and Graph API integration for enhanced functionality.
 
 ## Included Features
 * Teams SSO (bots)
@@ -71,7 +69,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
     a. **Name:** Enter a name for the connection. You'll use this name in your bot in the appsettings.json file. For example BotTeamsAuthADv1.
 
-    b. **Service Provider:** Select Azure Active Directory v2. Once you select this, the Azure AD-specific fields will be displayed.
+    b. **Service Provider:** Select Azure Active Directory V2. Once you select this, the Azure AD-specific fields will be displayed.
 
     c. **Client id:** Enter the Application (client) ID .
 
@@ -120,7 +118,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     npm install
     ```
 
-- Update the `.env` configuration for the bot to use the `MicrosoftAppId` and `MicrosoftAppPassword` and `ConnectionName` from the AAD app registration or from the Bot Framework registration. (Note that the MicrosoftAppId is the AppId created in step 1 (Setup for Bot SSO), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot SSO) and you can always create a new client secret anytime.)
+- Update the `.env` configuration for the bot to use the `MicrosoftAppId` and `MicrosoftAppPassword` and `ConnectionName` from the Microsoft Entra ID app registration or from the Bot Framework registration. (Note that the MicrosoftAppId is the AppId created in step 1 (Setup for Bot SSO), the MicrosoftAppPassword is referred to as the "client secret" in step 1 (Setup for Bot SSO) and you can always create a new client secret anytime.)
     Also, update `connectionName` as the name of your Azure Bot connection created in previous steps.
 
 - Run your bot at the command line:

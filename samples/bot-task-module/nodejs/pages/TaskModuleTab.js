@@ -14,8 +14,7 @@
 
         var taskInfo_1 = {
             title: "",
-            height: "",
-            width: "",
+            size: "",
             url: "",
             card: "",
             fallbackUrl: "",
@@ -201,13 +200,13 @@
                     case TaskModuleIds.YouTube:
                         taskInfo_1.title = TaskModuleStrings.YouTubeTitle;
                         taskInfo_1.size = { height: 7000, width: 1000 };
-                        microsoftTeams.dialog.open(taskInfo_1, submitHandler);
+                        microsoftTeams.dialog.url.open(taskInfo_1, submitHandler);
                         break;
 
                     case TaskModuleIds.PowerApp:
                         taskInfo_1.title = TaskModuleStrings.PowerAppTitle;
                         taskInfo_1.size = { height: TaskModuleSizes.powerapp.height, width: TaskModuleSizes.powerapp.width };
-                        microsoftTeams.dialog.open(taskInfo_1, submitHandler);
+                        microsoftTeams.dialog.url.open(taskInfo_1, submitHandler);
                         break;
 
                     case TaskModuleIds.CustomForm:
@@ -221,12 +220,11 @@
                         };
 
                         //Allows app to open a url based dialog.
-                        microsoftTeams.tasks.startTask(taskInfo_1, submitHandler);
+                        microsoftTeams.dialog.url.open(taskInfo_1, submitHandler);
                         break;
 
                     case TaskModuleIds.AdaptiveCard1:
-                        taskInfo_1.title = TaskModuleStrings.AdaptiveCardTitle;
-                        taskInfo_1.url = "";
+                        taskInfo_1.title = TaskModuleStrings.AdaptiveCardTitle;                      
                         taskInfo_1.size = { height: TaskModuleSizes.powerapp.height, width: TaskModuleSizes.powerapp.width };
                         taskInfo_1.card = adaptivecardTemplate;
 
@@ -238,8 +236,8 @@
                             );
                         };
 
-                        //Task modules invoked from a tab
-                        microsoftTeams.tasks.startTask(taskInfo_1, submitHandler);
+                        //Dialogs (referred as dialogs (referred as task modules in TeamsJS v1.x) in TeamsJS v1.x) invoked from a tab
+                        microsoftTeams.dialog.adaptiveCard.open(taskInfo_1, submitHandler);
                         break;
 
                     default:

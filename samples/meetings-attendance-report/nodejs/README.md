@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is a sample application which demonstrates how to get meeting attendance report using Graph API and send it in meeting chat using bot.
+description: This sample application demonstrates how to retrieve meeting attendance reports using the Graph API and send them through a bot in Microsoft Teams chat.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-meetings-attendance-report-nodejs
 
 # Meeting attendance report
 
-This is a sample application which demonstrates how to get meeting attendance report using Graph API and send it in meeting chat using bot.
+This sample application showcases the use of the Graph API to fetch meeting attendance reports and send them through a bot in Microsoft Teams chat. With features such as automated report delivery at the end of meetings, it provides an efficient way to track participant engagement and improve meeting effectiveness.
 
 ## Included Features
 * Bots
@@ -57,7 +57,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 > Note these instructions are for running the sample on your local machine, the tunnelling solution is required because
 > the Teams service needs to call into the bot.
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
     -  Click on "New registration", and create an Azure AD application.
 
    -  **Name:**  The name of your Teams app - if you are following the template for a default deployment, we recommend "App catalog lifecycle".
@@ -159,19 +159,19 @@ Make sure you've downloaded and installed Ngrok on your local machine. ngrok wil
 
 **Schedule the meeting and add Meeting Attendance Bot from Apps section in that particular scheduled meeting:**
 
-![Install](Images/InstallApp.png)
+![Install](Images/1.Install.png)
 
 **Add Meeting UI:**
 
-![Add Bot](Images/AddMeetingAttendanceBot.png)
+![Add Bot](Images/2.Add_to_meeting.png)
 
 **On installation you will get a welcome card:**
 
-![Welcome Card](Images/WelcomeCard.png)
+![Welcome Card](Images/3.Installed.png)
 
 **Once the bot is installed in the meeting, whenever meeting ends bot will send attendance report:**
 
-![Attendance Report](Images/MeetingAttendanceReportCard.png)
+![Attendance Report](Images/4.Attendance_report.png)
 
 ## Further reading
 - [List Meeting Attendance Reports](https://docs.microsoft.com/en-us/graph/api/meetingattendancereport-list?view=graph-rest-1.0&tabs=http)

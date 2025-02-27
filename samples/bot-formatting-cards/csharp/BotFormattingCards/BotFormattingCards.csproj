@@ -19,4 +19,5 @@
     <Folder Include="Images\" />
     <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
+
 </Project>

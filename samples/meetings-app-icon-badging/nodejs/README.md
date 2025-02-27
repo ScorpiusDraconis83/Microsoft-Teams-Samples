@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample app shows how to send app icon badging in Teams meetings using targeted notifications API.
+description: This sample demonstrates how to utilize the targeted notifications API for app icon badging during Teams meetings.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-meetings-app-icon-badging-nodejs
 
 ## App Icon Badging In Teams Meeting Notification
 
-This sample illustrates how to send app icon badging notification on tab icon in Teams meetings.
+This sample application illustrates how to implement app icon badging notifications in Teams meetings using the targeted notifications API. It supports features like bots, in-meeting notifications, and RSC permissions, enabling developers to enhance user interaction within their Teams applications.
 
 ## Included Features
 * Bots
@@ -25,7 +25,7 @@ This sample illustrates how to send app icon badging notification on tab icon in
 
 ## Interaction with app
 
-![App Icon Badging](Images/app_icon_badging.gif)
+![App Icon Badging](Images/AppIconBadgingNodejs.gif)
 
 ## Prerequisites
 
@@ -102,7 +102,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
     npm install
     ```
 
-- Go to .env file in your project folder and update `MicrosoftAppId`, `MicrosoftAppPassword` with the values received from your AAD app registration.
+- Go to .env file in your project folder and update `MicrosoftAppId`, `MicrosoftAppPassword` with the values received from your Microsoft Entra ID app registration.
   - Update `BaseUrl` as per your domain like ngrok url: https://1234.ngrok-free.app 
 
 - Start the bot
@@ -113,7 +113,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
  
 4) Setup Manifest for Teams
 
-- Modify the `manifest.json` file placed in `/appManifest` folder and replace the <<YOUR-MICROSOFT-APP-ID>> with your Microsoft App Id received via doing AAD app registration in your Azure Portal.
+- Modify the `manifest.json` file placed in `/appManifest` folder and replace the <<YOUR-MICROSOFT-APP-ID>> with your Microsoft App Id received via doing Microsoft Entra ID app registration in your Azure Portal.
     - **Edit** the `manifest.json` for `validDomains` and replace <<Valid-Domain>> with base Url domain. E.g. if you are using ngrok it would be `https://1234.ngrok-free.app` then your domain-name will be `1234.ngrok-free.app` and if you are using dev tunnels then your domain will be like: `12345.devtunnels.ms`.
     - **Zip** up the contents of the `appManifest` folder to create a `manifest.zip`
     - - **Upload** the `manifest.zip` to Teams
@@ -128,19 +128,22 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 **Setup Configurable Tab:**
 
-![Setup Tab](Images/1.set_up_config_tab.png)
+![Setup Tab](Images/1.Install.png)
 
 **Interacting with the app in Teams Meeting**
 
+![App Icon Badging](Images/2.AddToMeeting.png)
+
+![App Icon Badging](Images/4.Sidepanel.png)
+
 Type `SendNotification` in bot chat to send In-Meeting notifications.
 
+![App Icon Badging](Images/5.SendCommand.png)
+
 **Notification On Tab Icon as 'Icon Badging':**
+![App Icon Badging](Images/6.SelectOptionAppIconBadging.png)
 
-![App Icon Badging](Images/2.app_icon_badging.png)
-
-**Stage View and App Icon Badging Notification:**
-
-![Stage View and AppIconBadging](Images/3.StageView_and_AppIconBadging.png)
+![App Icon Badging](Images/7.AppIconBadgingNotification.png)
 
 
 ## Further reading

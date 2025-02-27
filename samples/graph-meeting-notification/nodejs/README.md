@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is a sample application which demonstrates the use of online meeting subscription and sends you the notifications in chat using bot.
+description: This sample application showcases online meeting subscriptions that notify users in chat about meeting events, including when users join or leave and when meetings start or end.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-meeting-notification-nodejs
 
 # Online meeting subscription
 
-This is a sample application which demonstrates use of online meeting subscription that will post notifications when user joined/left and when meeting start/end.
+This sample application illustrates the integration of online meeting subscriptions in Microsoft Teams, providing real-time notifications in chat for events like user joins, leaves, and meeting start/end. Developed in Node.js, the application features bot interactions, adaptive cards, and utilizes the Microsoft Graph API, along with a detailed setup guide involving Azure Bot Service and self-signed certificates for secure communications
 
 ## Included Features
 * Bots
@@ -38,18 +38,23 @@ This is a sample application which demonstrates use of online meeting subscripti
 
 The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio Code.
 
+**Note:** Please create and install self-signed certificate before running this sample using toolkit or manually.
+
 1. Ensure you have downloaded and installed [Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)
 1. Install the [Teams Toolkit extension](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension)
 1. Select **File > Open Folder** in VS Code and choose this samples directory from the repo
 1. Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps
+1. Before running this sample using toolkit, we need to update the .env file values in your code for 'Base64EncodedCertificate' and 'PRIVATE_KEY_PATH'. Follow this documentation for the steps to get the values  - [Create and install Self-Signed certificate](CertificateDocumentation/README.md)
 1. Select **Debug > Start Debugging** or **F5** to run the app in a Teams web client.
 1. In the browser that launches, select the **Add** button to install the app to Teams.
 
 > If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
 
+**Note:** Please create and install self-signed certificate before running this sample using toolkit or manually.
+
 ### Register your application with Azure AD
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. On the overview page, copy and save the **Application (client) ID, Directory (tenant) ID**. You’ll need those later when updating your Teams application manifest and in the appsettings.json.
 3. Navigate to **API Permissions**, and make sure to add the follow permissions:
 -   Select Add a permission

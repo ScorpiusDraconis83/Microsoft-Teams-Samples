@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Hello world Messaging Extension that accepts parameters and returns a card. Also, how to receive a forwarded message as a parameter in a Messaging Extension.
+description: This sample app showcases a Hello World Messaging Extension that processes parameters and generates a card in Microsoft Teams. It also illustrates how to receive and handle forwarded messages, enhancing interaction through action commands and message extensions.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-msgext-action-quickstart-js
 
 # Bots/Messaging Extension
 
-*Bots* allow users to interact with your web service through text, interactive cards, and task modules. *Messaging extensions* allow users to interact with your web service through buttons and forms in the Microsoft Teams client. They can search, or initiate actions, in an external system from the compose message area, the command box, or directly from a message.
+Discover this Hello World Messaging Extension that demonstrates how to accept parameters and return interactive cards in Microsoft Teams. With features like action commands and message handling, this sample enables seamless integration with your web service, allowing users to initiate actions and interact directly within Teams.
 
 ## Included Features
 * Bots
@@ -55,7 +55,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Run the app (Manually Uploading to Teams)
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
 2. Setup for Bot
 	- Also, register a bot with Azure Bot Service, following the instructions [here](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration?view=azure-bot-service-3.0).
@@ -106,13 +106,15 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ## Running the sample
 
-![action command compose](Images/ActionCommandParameter.PNG)
+![Installation](Images/1-AppInstallation.png)
 
-![compose extension result](Images/ComposeExtensionResultCard.PNG)
+![action command compose](Images/2-InputCard.png)
 
-![action command from message](Images/ActionCommandFromMessage.PNG)
+![compose extension result](Images/3-PreviewInComposeBox.png)
 
-![compose result from message action](Images/HeroCardResult.PNG)
+![action command from message](Images/4-IncludeImageCard.png)
+
+![compose result from message action](Images/5-ImageSent.png)
 
 ## Deploy to Teams
 Start debugging the project by hitting the `F5` key or click the debug icon in Visual Studio Code and click the `Start Debugging` green arrow button.

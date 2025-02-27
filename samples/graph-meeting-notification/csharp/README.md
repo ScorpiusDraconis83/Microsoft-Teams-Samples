@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This is a sample application which demonstrates the use of online meeting subscription and sends you the notifications in chat using bot.
+description: This sample application demonstrates how to use an online meeting subscription to send notifications in Microsoft Teams chat when users join, leave, or when meetings start and end.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-graph-meeting-notification-csharp
 
 # Online meeting subscription
 
-This is a sample application which demonstrates use of online meeting subscription that will post notifications when user joined/left and when meeting start/end.
+This sample application illustrates the use of online meeting subscriptions in Microsoft Teams, allowing for real-time notifications in chat when users join or leave meetings and when meetings start or end. Developed in C#, it includes features like bot integration, change notifications, and adaptive cards, along with a comprehensive setup guide involving Azure Bot Service, Microsoft Graph API, and self-signed certificates for secure communication.
 
 ## Concepts introduced in this sample
 - After sucessfully installation of bot in meeting you will get a welcome card and the subscription will be created for meeting it is installed in.
@@ -43,7 +43,7 @@ This is a sample application which demonstrates use of online meeting subscripti
 
 ## Setup
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
    - Navigate to **API Permissions**, and make sure to add the follow permissions:
    - Select Add a permission
@@ -92,9 +92,9 @@ This is a sample application which demonstrates use of online meeting subscripti
     ```
     
 - Modify the `/appsettings.json` and fill in the following details:
-  - `{{MicrosoftAppId}}` - Generated from Step 1 while doing AAd app registration in Azure portal.
+  - `{{MicrosoftAppId}}` - Generated from Step 1 while doing Microsoft Entra ID app registration in Azure portal.
   - `{{ MicrosoftAppPassword}}` - Generated from Step 1, also referred to as Client secret
-  - `{{ MicrosoftAppTenantId }}`- Generated from Step 1 while doing AAd app registration in Azure portal Directory (tenant) ID.
+  - `{{ MicrosoftAppTenantId }}`- Generated from Step 1 while doing Microsoft Entra ID app registration in Azure portal Directory (tenant) ID.
   - `{{BaseUrl}}` -  Your application's base url. E.g. https://12345.ngrok-free.app if you are using ngrok and if you are using dev tunnels, your URL will be like: https://12345.devtunnels.ms.
   - `{{ Base64EncodedCertificate}}` - value from *Create and install Self-Signed certificate* step 2
   - `{{ CertificateThumbprint }}` - value from *Create and install Self-Signed certificate* step 2

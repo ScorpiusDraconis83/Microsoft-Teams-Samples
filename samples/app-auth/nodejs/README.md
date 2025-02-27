@@ -8,7 +8,7 @@ languages:
     - typescript
     - javascript
     - html
-description: 'This sample demonstrates authentication in Microsoft Teams using bot and tab.'
+description: 'This sample showcases how to implement authentication in Microsoft Teams using both a bot and a tab, supporting Teams SSO with MSAL.js 2.0.'
 urlFragment: microsoft-teams-auth
 extensions:
     contentType: samples
@@ -18,7 +18,7 @@ urlFragment: officedev-microsoft-teams-samples-app-auth-nodejs
 
 # Microsoft Teams Authentication Sample
 
-This sample demonstrates authentication in Microsoft Teams using bot and tab.
+This sample showcases how to implement authentication in Microsoft Teams using both a bot and a tab. It demonstrates Single Sign-On (SSO) functionality, allowing seamless user experiences across Microsoft services.
 
 ## Included Features
 * Teams SSO (Using bots and tabs)
@@ -143,7 +143,7 @@ Registering a bot with the Microsoft Bot Framework automatically creates a corre
 
     - **WebApplicationInfo** - The parent of the following elements.
     - **Id** - The client ID of the application. This is an application ID that you obtain as part of registering the application with Azure AD 1.0 endpoint.
-    - **Resource** - The domain and subdomain of your application. This is the same URI (including the `api://` protocol) that you used when registering the app in AAD. The domain part of this URI should match the domain, including any subdomains, used in the URLs in the section of your Teams application manifest.
+    - **Resource** - The domain and subdomain of your application. This is the same URI (including the `api://` protocol) that you used when registering the app in Microsoft Entra ID. The domain part of this URI should match the domain, including any subdomains, used in the URLs in the section of your Teams application manifest.
 
     ```json
     "webApplicationInfo": {
@@ -165,7 +165,7 @@ Registering a bot with the Microsoft Bot Framework automatically creates a corre
     ```
 
 Notes:
--   The resource for an AAD app will usually just be the root of its site URL and the appID (e.g. api://subdomain.example.com/6789/c6c1f32b-5e55-4997-881a-753cc1d563b7). We also use this value to ensure your request is coming from the same domain. Therefore make sure that your contentURL for your tab uses the same domains as your resource property.
+-   The resource for an Microsoft Entra ID app will usually just be the root of its site URL and the appID (e.g. api://subdomain.example.com/6789/c6c1f32b-5e55-4997-881a-753cc1d563b7). We also use this value to ensure your request is coming from the same domain. Therefore make sure that your contentURL for your tab uses the same domains as your resource property.
 -   You need to be using manifest version 1.5 or higher for these fields to be used.
 -   Scopes aren’t supported in the manifest and instead should be specified in the API Permissions section in the Azure portal
 -   If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/app-auth/nodejs/src/AuthBot.ts#L119) line and put your debugger for local debug.
@@ -219,7 +219,7 @@ Bot authentication
 
 ![Bot SSO](Images/login-card.png)
 
-![Bot AAD login](Images/sso-bot.png)
+![Bot Microsoft Entra ID login](Images/sso-bot.png)
 
 ## Outlook on the web
 

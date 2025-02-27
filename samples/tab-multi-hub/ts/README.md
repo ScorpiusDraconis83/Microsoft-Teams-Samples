@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows how to interact with Calendar, Mail, Profile, geolocation from personal tabs app.
+description: This sample application allows users to seamlessly interact with their Calendar, Mail, Profile, and geolocation from personal tabs within Microsoft Teams. With easy setup and integration using TypeScript, it enhances user productivity by centralizing essential tools in one place.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-tab-multi-hub-ts
 
 # Interact with Calendar, Mail, Profile, geolocation from Personal Tabs App
 
-Interact with the user's calendar, mail, profile, geolocation from personal tabs app.
+This Microsoft Teams sample application provides users with the ability to interact with key features such as Calendar, Mail, Profile, and geolocation directly from personal tabs. Built with TypeScript, it simplifies user engagement and boosts productivity by integrating essential Microsoft 365 functionalities into a cohesive experience.
 
  ## Included Features
 * Tabs
@@ -54,7 +54,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 ### 1. Register you app with Azure AD
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
   2. Select **New Registration** and on the *register an application page*, set following values:
       * Set **name** to your app name.
       * Choose the **supported account types** (any account type will work)

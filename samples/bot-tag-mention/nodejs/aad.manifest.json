@@ -1,9 +1,9 @@
 {
     "id": "${{AAD_APP_OBJECT_ID}}",
     "appId": "${{AAD_APP_CLIENT_ID}}",
-    "name": "bot-conversation-sso-quickstart-aad",
+    "name": "bot-tag-mention-aad",
     "accessTokenAcceptedVersion": 2,
-    "signInAudience": "AzureADandPersonalMicrosoftAccount",
+    "signInAudience": "AzureADMultipleOrgs",
     "oauth2AllowIdTokenImplicitFlow": true,
 	"oauth2AllowImplicitFlow": true,
     "optionalClaims": {
@@ -24,6 +24,14 @@
             "resourceAccess": [
                 {
                     "id": "User.Read",
+                    "type": "Scope"
+                },
+                {
+                    "id": "TeamworkTag.ReadWrite",
+                    "type": "Scope"
+                },
+                {
+                    "id": "TeamworkTag.Read",
                     "type": "Scope"
                 }
             ]

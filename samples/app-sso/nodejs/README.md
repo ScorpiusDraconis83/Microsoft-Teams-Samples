@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Microsoft Teams app SSO for Tab, Bot, ME - search, action, linkunfurl
+description: This Microsoft Teams sample app demonstrates single sign-on (SSO) integration for Tabs, Bots, and Messaging Extensions, leveraging Azure AD and MSAL.js.
 products:
 - office-teams
 - office
@@ -14,7 +14,7 @@ urlFragment: officedev-microsoft-teams-samples-app-sso-nodejs
 ---
 # App SSO Node
 
-This app talks about the Teams Tab, Bot, Messaging Extension - search, action, linkunfurl SSO with Node JS
+TA Microsoft Teams sample app demonstrating single sign-on (SSO) integration across Tabs, Bots, and Messaging Extensions using Azure AD and MSAL.js. It supports capabilities like Adaptive Cards, OAuth flow with Azure Bot Service, and making Microsoft Graph calls for various scenarios such as profile retrieval and messaging extensions actions.
 
 __Tab SSO__
 This sample shows how to implement Azure AD single sign-on support for tabs. It will
@@ -30,7 +30,7 @@ This bot has been created using [Bot Framework](https://dev.botframework.com), i
 
 The focus of this sample is how to use the Bot Framework support for oauth in your bot. Teams behaves slightly differently than other channels in this regard. Specifically an Invoke Activity is sent to the bot rather than the Event Activity used by other channels. _This Invoke Activity must be forwarded to the dialog if the OAuthPrompt is being used._ This is done by subclassing the ActivityHandler and this sample includes a reusable TeamsActivityHandler. This class is a candidate for future inclusion in the Bot Framework SDK.
 
-The sample uses the bot authentication capabilities in [Azure Bot Service](https://docs.botframework.com), providing features to make it easier to develop a bot that authenticates users to various identity providers such as Azure AD (Azure Active Directory), GitHub, Uber, etc. The OAuth token is then used to make basic Microsoft Graph queries. Refer the **SSO** setup [documentation](https://docs.microsoft.com/microsoftteams/platform/bots/how-to/authentication/add-authentication?tabs=node-js%2Cnode-js-dialog-sample).
+The sample uses the bot authentication capabilities in [Azure Bot Service](https://docs.botframework.com), providing features to make it easier to develop a bot that authenticates users to various identity providers such as Microsoft Entra ID, GitHub, Uber, etc. The OAuth token is then used to make basic Microsoft Graph queries. Refer the **SSO** setup [documentation](https://docs.microsoft.com/microsoftteams/platform/bots/how-to/authentication/add-authentication?tabs=node-js%2Cnode-js-dialog-sample).
 
 > IMPORTANT: The manifest file in this app adds "token.botframework.com" to the list of `validDomains`. This must be included in any bot that uses the Bot Framework OAuth flow.
 
@@ -128,7 +128,7 @@ Refer to [Bot SSO Setup document](https://github.com/OfficeDev/Microsoft-Teams-S
 
 ### 4. Register your Teams Auth SSO with Azure AD
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 2. Select **New Registration** and on the *register an application page*, set following values:
     * Set **name** to your app name.
     * Choose the **supported account types** (any account type will work)
@@ -196,7 +196,7 @@ Refer to [Bot SSO Setup document](https://github.com/OfficeDev/Microsoft-Teams-S
 
 ## Running the sample
 
-You can interact with this bot by sending it a message. The bot will respond by requesting you to login to AAD, then making a call to the Graph API on your behalf and returning the results.
+You can interact with this bot by sending it a message. The bot will respond by requesting you to login to Microsoft Entra ID, then making a call to the Graph API on your behalf and returning the results.
 
 **Install App:**
 

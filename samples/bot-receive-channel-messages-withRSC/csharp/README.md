@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: Sample app which demonstrates how a bot can receive all channel messages with RSC without @mention.
+description: This bot can capture all channel messages in Teams using RSC permissions, without the need for @mentions.
 products:
 - office-teams
 - office
@@ -15,7 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-receive-channel-messages-with
 
 # Receive Channel messages with RSC permissions
 
-Using this C# sample, a bot can receive all channel messages with RSC without @mention.
+This sample app illustrates how a bot can capture all channel messages in Microsoft Teams by utilizing RSC (resource-specific consent) permissions, eliminating the need for @mentions. The bot supports adaptive card responses, easy local testing with tools like ngrok or dev tunnels, and deployment to Azure, allowing it to function effectively across different channels and group chats in Teams.
 
 This feature shown in this sample is currently available in Public Developer Preview only.
 
@@ -45,12 +45,26 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
   
 - [Teams](https://teams.microsoft.com) Microsoft Teams is installed and you have an account
 
+
+## Run the app (Using Teams Toolkit for Visual Studio)
+
+The simplest way to run this sample in Teams is to use Teams Toolkit for Visual Studio.
+1. Install Visual Studio 2022 **Version 17.10 Preview 4 or higher** [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+1. Install Teams Toolkit for Visual Studio [Teams Toolkit extension](https://learn.microsoft.com/en-us/microsoftteams/platform/toolkit/toolkit-v4/install-teams-toolkit-vs?pivots=visual-studio-v17-7)
+1. In the debug dropdown menu of Visual Studio, select Dev Tunnels > Create A Tunnel (set authentication type to Public) or select an existing public dev tunnel.
+1. In the debug dropdown menu of Visual Studio, select default startup project > **Microsoft Teams (browser)**
+1. In Visual Studio, right-click your **TeamsApp** project and **Select Teams Toolkit > Prepare Teams App Dependencies**
+1. Using the extension, sign in with your Microsoft 365 account where you have permissions to upload custom apps.
+1. Select **Debug > Start Debugging** or **F5** to run the menu in Visual Studio.
+1. In the browser that launches, select the **Add** button to install the app to Teams.
+> If you do not have permission to upload custom apps (sideloading), Teams Toolkit will recommend creating and using a Microsoft 365 Developer Program account - a free program to get your own dev environment sandbox that includes Teams.
+
 ## Setup
 
-1. Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+1. Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 
 2. Setup for Bot
-- Register a AAD aap registration in Azure portal.
+- Register a Microsoft Entra ID aap registration in Azure portal.
 - Also, register a bot with Azure Bot Service, following the instructions [here](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration?view=azure-bot-service-3.0).
 - Ensure that you've [enabled the Teams Channel](https://docs.microsoft.com/azure/bot-service/channel-connect-teams?view=azure-bot-service-4.0)
 - While registering the bot, use `https://<your_tunnel_domain>/api/messages` as the messaging endpoint.
@@ -77,7 +91,7 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
     ```
 
 - Modify the `/appsettings.json` and fill in the following details:
-  - `{{BOT-ID}}` - Generated from Step 1 while doing AAd app registration in Azure portal.
+  - `{{BOT-ID}}` - Generated from Step 1 while doing Microsoft Entra ID app registration in Azure portal.
   - `{{BOT-PASSWORD}}` -Generated from Step 1, also referred to as Client secret 
 
 
@@ -92,17 +106,17 @@ Please find below demo manifest which is deployed on Microsoft Azure and you can
 
 
 5. This step is specific to Teams.
-    - **Edit** the `manifest.json` contained in the  `AppManifest` folder to replace your Microsoft App Id (that was created when you registered your bot earlier) *everywhere* you see the place holder string `<<YOUR-MICROSOFT-APP-ID>>` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`) also update the `<<DOMAIN-NAME>>` with the tunnel URL`
+    - **Edit** the `manifest.json` contained in the  `appPackage` folder to replace your Microsoft App Id (that was created when you registered your bot earlier) *everywhere* you see the place holder string `<<YOUR-MICROSOFT-APP-ID>>` (depending on the scenario the Microsoft App Id may occur multiple times in the `manifest.json`) also update the `<<DOMAIN-NAME>>` with the tunnel URL`
     - **Edit** the `manifest.json` for `<<MANIFEST-ID>>` replace it with any `GUID` using guid generator.
     - **Edit** the `manifest.json` for `webApplicationInfo` resource `"api://botid-{{MicrosoftAppId}}"` with MicrosoftAppId. E.g. `"api://botid-{{MicrosoftAppId}}"`.
     
-    - **Zip** up the contents of the `AppManifest` folder to create a `manifest.zip`
+    - **Zip** up the contents of the `appPackage` folder to create a `manifest.zip`
     - **Sideload** in a team to test
          - Select or create a team
          - Select the ellipses **...** from the left pane. The drop-down menu appears.
          - Select **Manage Team**, then select **Apps** 
          - Then select **Upload a custom app** from the lower right corner.
-         - Then select the `manifest.zip` file from `AppManifest`, and then select **Add** to add the bot to your selected team.
+         - Then select the `manifest.zip` file from `appPackage`, and then select **Add** to add the bot to your selected team.
 
 **Note**: If you are facing any issue in your app, please uncomment [this](https://github.com/OfficeDev/Microsoft-Teams-Samples/blob/main/samples/bot-receive-channel-messages-withRSC/csharp/ReceiveMessagesWithRSC/AdapterWithErrorHandler.cs#L24) line and put your debugger for local debug.
 

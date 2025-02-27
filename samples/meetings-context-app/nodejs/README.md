@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample shows the contents of meeting tab context object in a meeting tab and using bot's meeting API, meeting participant details and meeting details are sent to user.
+description: This sample demonstrates how to retrieve and display meeting context and participant details in Microsoft Teams using the bot's Meeting API.
 products:
 - office-teams
 - office
@@ -16,7 +16,7 @@ urlFragment: officedev-microsoft-teams-samples-meetings-context-app-nodejs
 
 # Teams Meeting Context Sample Node.js
 
-This sample shows the contents of meeting tab context object in a meeting tab and shows the output of Meeting's API `TeamsInfo.getMeetingParticipant` and `TeamsInfo.getMeetingInfo` using bot commands.
+This sample application illustrates how to display the meeting context object in a Microsoft Teams meeting tab, utilizing the bot's Meeting API to fetch participant and meeting details. Users can interact with the bot to obtain comprehensive information about participants and meeting specifics, such as start times, end times, and joining URLs, thereby enriching the collaborative experience within Teams.
 
 ## Included Features
 * Bots
@@ -68,7 +68,7 @@ The simplest way to run this sample in Teams is to use Teams Toolkit for Visual 
 
 Register your application with Azure AD
 
-- Register a new application in the [Azure Active Directory – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
+- Register a new application in the [Microsoft Entra ID – App Registrations](https://go.microsoft.com/fwlink/?linkid=2083908) portal.
 - On the overview page, copy and save the **Application (client) ID, Directory (tenant) ID**. You’ll need those later when updating your Teams application manifest and in the appsettings.json.
 - Navigate to the **Certificates & secrets**. In the Client secrets section, click on "+ New client secret". Add a description (Name of the secret) for the secret and select “Never” for Expires. Click "Add". Once the client secret is created, copy its value, it need to be placed in the .env file.
 

@@ -1,6 +1,6 @@
 ---
 page_type: sample
-description: This sample app demonstrate is how to start a thread in a specific Team's channel using Bot Framework v4.
+description: This app demonstrates how to start a conversation thread in a specific Teams channel using Bot Framework v4.
 products:
 - office-teams
 - office
@@ -15,10 +15,7 @@ urlFragment: officedev-microsoft-teams-samples-bot-initiate-thread-in-channel-ja
 
 # Microsoft Teams - Start Thread In A Specific Channel of a Team
 
-Bot Framework v4 Conversation Bot sample for Teams.
-
-This bot has been created using [Bot Framework](https://dev.botframework.com). This sample shows
-how to incorporate basic conversational flow into a Teams application. It also illustrates a few of the Teams specific calls you can make from your bot.
+This sample application illustrates how to initiate a conversation thread within a specific channel in Microsoft Teams using Bot Framework v4. It includes key features such as adaptive cards, bot-driven interactions, and setup instructions for Teams Toolkit in Visual Studio, enabling easy sideloading and debugging. Ideal for developers looking to integrate bots in Teams channels and create engaging, context-specific conversations.
 
 This sample is a Spring Boot app and uses the Azure CLI and azure-webapp Maven plugin to deploy to Azure.
 
@@ -65,7 +62,7 @@ the Teams service needs to call into the bot.
 
    In Azure portal, create a [Azure Bot resource](https://docs.microsoft.com/azure/bot-service/bot-service-quickstart-registration).
     - For bot handle, make up a name.
-    - Select "Use existing app registration" (Create the app registration in Azure Active Directory beforehand.)
+    - Select "Use existing app registration" (Create the app registration in Microsoft Entra ID beforehand.)
     - __*If you don't have an Azure account*__ create an [Azure free account here](https://azure.microsoft.com/free/)
 
    In the new Azure Bot resource in the Portal, 
@@ -98,8 +95,8 @@ the Teams service needs to call into the bot.
 > Note this `manifest.json` specified that the bot will be installed in "personal", "team" and "groupchat" scope which is why you immediately entered a one on one chat conversation with the bot. You can at mention the bot in a group chat or in a Channel in the Team you installed it in. Please refer to Teams documentation for more details.
 
 You can interact with this bot by sending it a message. The bot will respond by creating a new thread in the channel and replying to that new thread.
-![AddInTeam](Images/AddInTeam.PNG)
-![NewThread](Images/NewThread.PNG)
+![AddInTeam](Images/1.addtoteam.png)
+![NewThread](Images/2.thread.png)
 
 ## Deploy the bot to Azure
 

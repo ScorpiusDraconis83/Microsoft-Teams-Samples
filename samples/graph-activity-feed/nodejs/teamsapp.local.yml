@@ -37,7 +37,7 @@ provision:
   - uses: teamsApp/create
     with:
       # Teams app name
-      name: graph-activity-feed-${{TEAMSFX_ENV}}
+      name: graph-activity-feed${{APP_NAME_SUFFIX}}
     # Write the information of created resources into environment file for
     # the specified environment variable(s).
     writeToEnvironmentFile: 
@@ -102,6 +102,7 @@ deploy:
     with:
       target: ./.env # Required. The relative path of settings file
       envs:
-          appId: ${{AAD_APP_CLIENT_ID}}
-          clientSecret: ${{SECRET_AAD_APP_CLIENT_SECRET}}
+          ClientId: ${{AAD_APP_CLIENT_ID}}
+          ClientSecret: ${{SECRET_AAD_APP_CLIENT_SECRET}}
           applicationIdUri: api://${{TAB_DOMAIN}}/${{AAD_APP_CLIENT_ID}}
+          TenantId: ${{AAD_APP_TENANT_ID}}
